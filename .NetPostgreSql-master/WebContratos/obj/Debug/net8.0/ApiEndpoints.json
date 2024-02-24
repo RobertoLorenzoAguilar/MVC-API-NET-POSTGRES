@@ -64,5 +64,15 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.AuthController",
+    "Method": "GetUsuarios",
+    "RelativePath": "Auth/usuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

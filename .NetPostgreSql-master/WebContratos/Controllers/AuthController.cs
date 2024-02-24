@@ -20,7 +20,20 @@ namespace WebContratos.Controllers
             _contexAuth = context;
         }
 
+        [HttpGet]
+        [Route("usuarios")]
+        [Authorize("read:usuarios")] // Se requiere el ámbito "read:usuarios"
+        public IActionResult GetUsuarios()
+        {
+            // Lógica para obtener y devolver la lista de usuarios
+            return Ok(new { usuarios = ObtenerListaUsuarios() });
+        }
 
+        private string[] ObtenerListaUsuarios()
+        {
+            // Simulación de la obtención de usuarios desde una base de datos u otro origen
+            return new string[] { "Usuario1", "Usuario2", "Usuario3" };
+        }
 
 
         #region inicio sesion
@@ -34,7 +47,9 @@ namespace WebContratos.Controllers
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                new Claim(ClaimTypes.Name, "usuario_de_ejemplo")
+                new Claim(ClaimTypes.Name, "usuario_de_ejemplo"),
+                //new Claim("Scope", "read:usuarios")
+                new Claim("Scope", "read:usuariosw")
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

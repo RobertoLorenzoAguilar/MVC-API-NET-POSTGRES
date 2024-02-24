@@ -36,7 +36,12 @@ builder.Services.AddAuthentication(auth =>
         ValidateAudience = false
     };
 });
-
+// Definir políticas de autorización basadas en ámbitos
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("read:usuarios", policy => policy.RequireClaim("scope", "read:usuarios"));
+});
+// final JWT
 builder.Services.AddControllers();
 var app = builder.Build();
 
