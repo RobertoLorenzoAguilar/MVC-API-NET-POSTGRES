@@ -37,6 +37,16 @@
   },
   {
     "ContainingType": "WebContratos.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.AuthController",
     "Method": "GetPermisos",
     "RelativePath": "Auth/permiso",
     "HttpMethod": "GET",

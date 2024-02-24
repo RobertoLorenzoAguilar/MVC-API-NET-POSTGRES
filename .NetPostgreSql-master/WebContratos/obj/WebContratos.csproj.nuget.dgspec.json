@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rober\\source\\repos\\WebContratos\\WebContratos\\WebContratos.csproj": {}
+    "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rober\\source\\repos\\WebContratos\\WebContratos\\WebContratos.csproj": {
+    "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rober\\source\\repos\\WebContratos\\WebContratos\\WebContratos.csproj",
+        "projectUniqueName": "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj",
         "projectName": "WebContratos",
-        "projectPath": "C:\\Users\\rober\\source\\repos\\WebContratos\\WebContratos\\WebContratos.csproj",
-        "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rober\\source\\repos\\WebContratos\\WebContratos\\obj\\",
+        "projectPath": "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj",
+        "packagesPath": "C:\\Users\\BrdkBug\\.nuget\\packages\\",
+        "outputPath": "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rober\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\BrdkBug\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.2, )"
