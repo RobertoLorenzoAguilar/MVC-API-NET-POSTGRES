@@ -15,7 +15,9 @@ Antes de comenzar, es importante diseñar la estructura de la base de datos. Ase
 
 ## Paso 2: Crear Rol de Usuario y Asignarlo a la Base de Datos
 Desde el command line interface del motor del Postgres
-<img src="motor_psql">
+
+<img src="Images/motor_psql">
+
 Primero, creamos un rol de usuario en PostgreSQL y lo asignamos a la base de datos. Por ejemplo:
 
 ```sql
@@ -35,14 +37,14 @@ CREATE DATABASE contrato_db WITH OWNER robert TEMPLATE template0;
 ## Paso 4: Usando datsagrip el gestor de base de datos se es posible respaturrar y exportar.
 
 En caso de tener un respaldo de la base de datos, podemos importarlo para restaurar los datos.
-<img src="exportacion-db.png">
+<img src="Images/exportacion-db.png">
 
-<img src="restauracion.png">
+<img src="Images/restauracion.png">
 
 
 es necesario setear las herramientas que podras encontrar en C:\Program Files\PostgreSQL\16\bin, por defecto.
 
-<img src="seteo_posgres_tools.png">
+<img src="Images/seteo_posgres_tools.png">
 
 
 
