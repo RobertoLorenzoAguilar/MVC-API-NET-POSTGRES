@@ -49,6 +49,10 @@ es necesario setear las herramientas que podras encontrar en C:\Program Files\Po
 ## Paso 5: Crear un Proyecto ASP.NET Core API
 
 Instale Microsoft Visual Studio y seleccione las herramientas de ASP.NET Web para crear un proyecto del tipo ASP.NET Core API.
+<img src="Images/instalacion_visual_studio.png">
+
+Recuerda habilitar para este caso la compatibilidad con controladores ya que no sera una minimal API.
+<img src="Images/Habilitar_utilizar_controladores_y_compatibilidad_largo_plazo.png">
 
 ## Paso 6: Instalar Entity Framework y Npgsql
 
