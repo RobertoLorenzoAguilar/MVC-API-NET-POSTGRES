@@ -298,13 +298,14 @@ Se puede apreciar cómo se genera el token y se hacen peticiones para validar si
 
 
 # Tecnologías
-
-1. [Composer](https://getcomposer.org/): Herramienta de gestión de dependencias para PHP.
-2. [PHP](https://www.php.net/): PHP puede ser instalado mediante XAMPP. Se recomienda la versión PHP 7.2.31 a < 8.0.
-3. [DataGrip](https://www.jetbrains.com/datagrip/): Entorno de desarrollo para bases de datos.
-4. [Git](https://git-scm.com/): Sistema de control de versiones distribuido.
+1. [Balsamiq](https://balsamiq.com/): Herramienta para diseñar bosquejos.
+2. [DataGrip](https://www.jetbrains.com/datagrip/): Entorno de desarrollo para bases de datos.
+3. [Git](https://git-scm.com/): Sistema de control de versiones distribuido.
+4. [Microsoft Visual Studio](https://visualstudio.microsoft.com/es/downloads/): IDE .NET.
 5. [PostgreSQL](https://www.postgresql.org/): Motor de base de datos relacional.
-6. [Debugguer Visual Studio Code PHP](https://www.youtube.com/watch?v=QxRTw4GPk5Q): Debugueo en windows visual studio code.
-7. 
+6. [PostMan](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode): Recomiendo esta extensión para Visual Studio Code para testear la API.
+7. [ScreenToGift](https://www.screentogif.com/): Herramienta para generar GIF's.
+8. [Visual Studio Code](https://code.visualstudio.com/): Para trabajar la parte del Front.
+
 
 ¡Listo! Ahora su proyecto ASP.NET Core API está configurado para trabajar con la base de datos PostgreSQL utilizando Entity Framework Core. Si tiene alguna pregunta o necesita más ayuda, no dude en consultar la documentación oficial de ASP.NET Core y Entity Framework Core.
