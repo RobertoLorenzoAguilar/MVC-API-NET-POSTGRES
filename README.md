@@ -16,7 +16,7 @@ Antes de comenzar, es importante diseñar la estructura de la base de datos. Ase
 ## Paso 2: Crear Rol de Usuario y Asignarlo a la Base de Datos
 Desde el command line interface del motor del Postgres
 
-<img src="Images/motor_psql">
+<img src="Images/motor_psql.png">
 
 Primero, creamos un rol de usuario en PostgreSQL y lo asignamos a la base de datos. Por ejemplo:
 
