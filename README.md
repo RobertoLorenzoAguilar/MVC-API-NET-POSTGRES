@@ -1,6 +1,21 @@
 # README
 
-Este documento proporciona instrucciones detalladas para configurar y trabajar con una base de datos PostgreSQL en un proyecto de ASP.NET Core API, utilizando Entity Framework Core como ORM.
+Este README proporciona instrucciones detalladas para configurar y trabajar con una base de datos PostgreSQL en un proyecto de ASP.NET Core API, utilizando Entity Framework Core como ORM.
+
+## Contenido
+
+1. [Bosquejos de primeras pantallas y diagrama entidad-relación](#paso-1-bosquejos-de-primeras-pantallas-y-diagrama-entidad-relación)
+2. [Crear Rol de Usuario y Asignarlo a la Base de Datos](#paso-2-crear-rol-de-usuario-y-asignarlo-a-la-base-de-datos)
+3. [Crear la Base de Datos en PostgreSQL](#paso-3-crear-la-base-de-datos-en-postgresql)
+4. [Usar DBeaver para respaldar y restaurar la base de datos](#paso-4-usar-dbeaver-para-respaldar-y-restaurar-la-base-de-datos)
+5. [Crear un Proyecto ASP.NET Core API](#paso-5-crear-un-proyecto-aspnet-core-api)
+6. [Instalar Entity Framework y Npgsql](#paso-6-instalar-entity-framework-y-npgsql)
+7. [Generar los Modelos desde la Base de Datos](#paso-7-generar-los-modelos-desde-la-base-de-datos)
+8. [Configurar la Cadena de Conexión](#paso-8-configurar-la-cadena-de-conexión)
+9. [Configurar la Cadena de Conexión en appsettings.json](#paso-9-configurar-la-cadena-de-conexión-en-appsettingsjson)
+10. [Configurar el Contexto en Program.cs](#paso-10-configurar-el-contexto-en-programcs)
+11. [Agregar un Controlador Vacío](#paso-11-agregar-un-controlador-vacío)
+12. [Referencias de programas](#referencias-de-programas)
 
 ## Paso 1: Bosquejos de primeras pantallas y diagrama entidad relación.
 
