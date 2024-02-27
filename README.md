@@ -64,12 +64,11 @@ Instale las siguientes dependencias de NuGet para trabajar con Entity Framework 
 
 Puedes realizarlo desde Nutget package manager o desde la consola.
 
-<img src="Images/entiti_nut_get_package.png>
+<img src="Images/entiti_nut_get_package.png">
 
 ```dotnet
   dotnet add package nombre_paquete --version 8.0.2
 ```
-
 
 ## Paso 7: Generar los Modelos desde la Base de Datos
 
@@ -78,6 +77,8 @@ Utilizamos el comando Scaffold-DbContext para generar los modelos a partir de la
 ```bash
 Scaffold-DbContext "Host=localhost;Database=contrato_db;Username=robert;Password=root;Encrypt=False" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models
 ```
+<img src="Images/contexto_creado_mover_cadena.png">
+
 
 ## Paso 8: Configurar la Cadena de Conexión
 
@@ -104,14 +105,178 @@ Agregue la cadena de conexión en `appsettings.json` como sigue:
 
 ## Paso 10: Configurar el Contexto en Program.cs
 
-Agregue el contexto creado en `Program.cs` de la siguiente manera:
+Asi debe quedar la configuracion en `Program.cs` de la siguiente manera:
 
+Program.cs
 ```csharp
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using WebContratos.Controllers;
+using WebContratos.Models;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContratoDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("cadenaSql")));
+
+
+//agregar en la documentación la parte 
+// Configuración de JWT
+var key = Encoding.ASCII.GetBytes("aquí_va_tu_clave_secretaaquí_va_tu_clave_secretaaquí_va_tu_clave_secreta");
+builder.Services.AddAuthentication(auth =>
+{
+    auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
+// Definir políticas de autorización basadas en ámbitos
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("read:usuarios", policy => policy.RequireClaim("scope", "read:usuarios"));
+});
+// final JWT
+builder.Services.AddControllers();
+var app = builder.Build();
+
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
 ```
 
 ## Paso 11: Agregar un Controlador Vacío
 
 Agregue un controlador vacío en su proyecto para interactuar con la base de datos según sea necesario.
+```csharp
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using WebContratos.Models;
+
+namespace WebContratos.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class AuthController : ControllerBase
+    {       
+
+        private static ContratoDbContext? _contexAuth;
+        public AuthController(ContratoDbContext context)
+        {
+            _contexAuth = context;
+        }
+
+        [HttpGet]
+        [Route("usuarios")]
+        [Authorize("read:usuarios")] // Se requiere el ámbito "read:usuarios"
+        public IActionResult GetUsuarios()
+        {
+            // Lógica para obtener y devolver la lista de usuarios
+            return Ok(new { usuarios = ObtenerListaUsuarios() });
+        }
+
+        private string[] ObtenerListaUsuarios()
+        {
+            // Simulación de la obtención de usuarios desde una base de datos u otro origen
+            return new string[] { "Usuario1", "Usuario2", "Usuario3" };
+        }
+
+
+        #region inicio sesion
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Login()
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes("aquí_va_tu_clave_secretaaquí_va_tu_clave_secretaaquí_va_tu_clave_secreta");
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                new Claim(ClaimTypes.Name, "usuario_de_ejemplo"),
+                //new Claim("Scope", "read:usuarios")
+                new Claim("Scope", "read:usuariosw")
+                }),
+                Expires = DateTime.UtcNow.AddHours(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return Ok(new
+            {
+                token = tokenHandler.WriteToken(token)
+            });
+        }
+
+        [HttpGet]
+        [Route("auth")]
+        [Authorize] // Agregamos el atributo [Authorize] para requerir autorización
+        public void Get()
+        {
+            var rng = new Random();
+        }
+
+        //Con este cambio, se requerirá que el cliente proporcione un token de acceso válido
+        //(o cualquier otro mecanismo de autorización configurado en tu aplicación) 
+        //para poder llamar a este endpoint GET /auth.Si el cliente no proporciona 
+        //credenciales válidas, recibirá un código de estado de respuesta 401 Unauthorized.
+        #endregion
+
+        [HttpGet]
+        [Route("permiso")]
+        public async Task<ActionResult<IEnumerable<Permiso>>> GetPermisos()
+        {
+            return await _contexAuth.Permisos.ToListAsync();
+        }
+
+        #region  Seccion modulos solo para prueba
+
+        [HttpGet]
+        [Route("GetModulos")]
+        //[Route("modulo")]
+        public async Task<ActionResult<IEnumerable<Modulo>>> GetModulos()
+        {
+            return await _contexAuth.Modulos.ToListAsync();
+        }
+        #endregion
+
+    }
+}
+
+```
+
+
 
 ¡Listo! Ahora su proyecto ASP.NET Core API está configurado para trabajar con la base de datos PostgreSQL utilizando Entity Framework Core. Si tiene alguna pregunta o necesita más ayuda, no dude en consultar la documentación oficial de ASP.NET Core y Entity Framework Core.
