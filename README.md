@@ -297,6 +297,9 @@ Se puede apreciar cómo se genera el token y se hacen peticiones para validar si
 <img src="Images/peticiones.gif">
 
 
+como puedes observar se traen los datos de la tabla.
+<img src="Images/tbl_bd.png">
+
 # Tecnologías
 1. [Balsamiq](https://balsamiq.com/): Herramienta para diseñar bosquejos.
 2. [DataGrip](https://www.jetbrains.com/datagrip/): Entorno de desarrollo para bases de datos.
