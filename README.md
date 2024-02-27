@@ -2,20 +2,27 @@
 
 Este README proporciona instrucciones detalladas para configurar y trabajar con una base de datos PostgreSQL en un proyecto de ASP.NET Core API, utilizando Entity Framework Core como ORM.
 
-## Paso 1: Diseñar la Base de Datos
+## Paso 1: Bosquejos de primeras pantallas y diagrama entiedad relaciòn
 
 Antes de comenzar, es importante diseñar la estructura de la base de datos. Asegúrese de tener un diseño claro de las tablas y relaciones necesarias para su aplicación.
 
 <img src="Images/bosquejoUsuario.png">
 
+<img src="Images/bosquejo2.png">
+
+<img src="Images/e-r.png">
+
 
 ## Paso 2: Crear Rol de Usuario y Asignarlo a la Base de Datos
-
+Desde el command line interface del motor del Postgres
+<img src="motor_psql">
 Primero, creamos un rol de usuario en PostgreSQL y lo asignamos a la base de datos. Por ejemplo:
 
 ```sql
 CREATE USER robert WITH SUPERUSER LOGIN PASSWORD 'root';
 ```
+
+
 
 ## Paso 3: Crear la Base de Datos en PostgreSQL
 
@@ -25,9 +32,19 @@ Utilizamos el siguiente comando para crear la base de datos en PostgreSQL:
 CREATE DATABASE contrato_db WITH OWNER robert TEMPLATE template0;
 ```
 
-## Paso 4: Importar en Caso de Ya Tenerla
+## Paso 4: Usando datsagrip el gestor de base de datos se es posible respaturrar y exportar.
 
 En caso de tener un respaldo de la base de datos, podemos importarlo para restaurar los datos.
+<img src="exportacion-db.png">
+
+<img src="restauracion.png">
+
+
+es necesario setear las herramientas que podras encontrar en C:\Program Files\PostgreSQL\16\bin, por defecto.
+
+<img src="seteo_posgres_tools.png">
+
+
 
 ## Paso 5: Crear un Proyecto ASP.NET Core API
 
