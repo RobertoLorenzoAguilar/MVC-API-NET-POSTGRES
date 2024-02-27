@@ -56,10 +56,20 @@ Recuerda habilitar para este caso la compatibilidad con controladores ya que no 
 
 ## Paso 6: Instalar Entity Framework y Npgsql
 
-Instale las siguientes dependencias de NuGet para trabajar con Entity Framework Core y PostgreSQL:
+Instale las siguientes dependencias de NuGet para trabajar con Entity Framework Core, PostgreSQL y JWt para considerar los temas de seguridad mientras madura el proyecto:
 
 - `Microsoft.EntityFrameworkCore.Tools`
 - `Npgsql.EntityFrameworkCore.PostgreSQL`
+- `Microsoft.AspNetCore.Authentication.JwtBearer`
+
+Puedes realizarlo desde Nutget package manager o desde la consola.
+
+<img src="Images/entiti_nut_get_package.png>
+
+```dotnet
+  dotnet add package nombre_paquete --version 8.0.2
+```
+
 
 ## Paso 7: Generar los Modelos desde la Base de Datos
 
