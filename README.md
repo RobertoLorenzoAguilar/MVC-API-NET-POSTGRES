@@ -24,8 +24,6 @@ Primero, creamos un rol de usuario en PostgreSQL y lo asignamos a la base de dat
 CREATE USER robert WITH SUPERUSER LOGIN PASSWORD 'root';
 ```
 
-
-
 ## Paso 3: Crear la Base de Datos en PostgreSQL
 
 Utilizamos el siguiente comando para crear la base de datos en PostgreSQL:
