@@ -17,7 +17,7 @@ Este README proporciona instrucciones detalladas para configurar y trabajar con 
 11. [Agregar un Controlador Vacío](#paso-11-agregar-un-controlador-vacío)
 12. [Testeando la API](#testeand-la-api)
 13. [Referencias de programas](#testeand-la-api)
-
+- [Tecnologías](#tecnologías)
 ## Paso 1: Bosquejos de primeras pantallas y diagrama entidad relación.
 
 Antes de comenzar, es importante diseñar la estructura de la base de datos. Asegúrese de tener un diseño claro de las tablas y relaciones necesarias para su aplicación.
@@ -296,5 +296,15 @@ namespace WebContratos.Controllers
 Se puede apreciar cómo se genera el token y se hacen peticiones para validar si tiene permisos, simulando un inicio de sesión.
 <img src="Images/peticiones.gif">
 
+
+# Tecnologías
+
+1. [Composer](https://getcomposer.org/): Herramienta de gestión de dependencias para PHP.
+2. [PHP](https://www.php.net/): PHP puede ser instalado mediante XAMPP. Se recomienda la versión PHP 7.2.31 a < 8.0.
+3. [DataGrip](https://www.jetbrains.com/datagrip/): Entorno de desarrollo para bases de datos.
+4. [Git](https://git-scm.com/): Sistema de control de versiones distribuido.
+5. [PostgreSQL](https://www.postgresql.org/): Motor de base de datos relacional.
+6. [Debugguer Visual Studio Code PHP](https://www.youtube.com/watch?v=QxRTw4GPk5Q): Debugueo en windows visual studio code.
+7. 
 
 ¡Listo! Ahora su proyecto ASP.NET Core API está configurado para trabajar con la base de datos PostgreSQL utilizando Entity Framework Core. Si tiene alguna pregunta o necesita más ayuda, no dude en consultar la documentación oficial de ASP.NET Core y Entity Framework Core.
