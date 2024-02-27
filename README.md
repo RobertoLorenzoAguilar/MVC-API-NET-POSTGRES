@@ -6,17 +6,17 @@ Este README proporciona instrucciones detalladas para configurar y trabajar con 
 
 Antes de comenzar, es importante diseñar la estructura de la base de datos. Asegúrese de tener un diseño claro de las tablas y relaciones necesarias para su aplicación.
 
-<img src="Images/bosquejoUsuario.png">
+<img src="Images/bosquejoUsuario.png" width="300">
 
-<img src="Images/bosquejo2.png">
+<img src="Images/bosquejo2.png" width="300">
 
-<img src="Images/e-r.png">
+<img src="Images/e-r.png" width="300">
 
 
 ## Paso 2: Crear Rol de Usuario y Asignarlo a la Base de Datos
 Desde el command line interface del motor del Postgres
 
-<img src="Images/motor_psql.png">
+<img src="Images/motor_psql.png" width="300">
 
 Primero, creamos un rol de usuario en PostgreSQL y lo asignamos a la base de datos. Por ejemplo:
 
@@ -35,24 +35,24 @@ CREATE DATABASE contrato_db WITH OWNER robert TEMPLATE template0;
 ## Paso 4: Usando datsagrip el gestor de base de datos se es posible respaturrar y exportar.
 
 En caso de tener un respaldo de la base de datos, podemos importarlo para restaurar los datos.
-<img src="Images/exportacion-db.png">
+<img src="Images/exportacion-db.png" width="300">
 
-<img src="Images/restauracion.png">
+<img src="Images/restauracion.png" width="300">
 
 
 es necesario setear las herramientas que podras encontrar en C:\Program Files\PostgreSQL\16\bin, por defecto.
 
-<img src="Images/seteo_posgres_tools.png">
+<img src="Images/seteo_posgres_tools.png" width="300">
 
 
 
 ## Paso 5: Crear un Proyecto ASP.NET Core API
 
 Instale Microsoft Visual Studio y seleccione las herramientas de ASP.NET Web para crear un proyecto del tipo ASP.NET Core API.
-<img src="Images/instalacion_visual_studio.png">
+<img src="Images/instalacion_visual_studio.png" width="300">
 
 Recuerda habilitar para este caso la compatibilidad con controladores ya que no sera una minimal API.
-<img src="Images/Habilitar_utilizar_controladores_y_compatibilidad_largo_plazo.png">
+<img src="Images/Habilitar_utilizar_controladores_y_compatibilidad_largo_plazo.png" width="300">
 
 ## Paso 6: Instalar Entity Framework y Npgsql
 
@@ -64,7 +64,7 @@ Instale las siguientes dependencias de NuGet para trabajar con Entity Framework 
 
 Puedes realizarlo desde Nutget package manager o desde la consola.
 
-<img src="Images/entiti_nut_get_package.png">
+<img src="Images/entiti_nut_get_package.png" width="300">
 
 ```dotnet
   dotnet add package nombre_paquete --version 8.0.2
@@ -77,7 +77,7 @@ Utilizamos el comando Scaffold-DbContext para generar los modelos a partir de la
 ```bash
 Scaffold-DbContext "Host=localhost;Database=contrato_db;Username=robert;Password=root;Encrypt=False" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models
 ```
-<img src="Images/contexto_creado_mover_cadena.png">
+<img src="Images/contexto_creado_mover_cadena.png" width="300">
 
 
 ## Paso 8: Configurar la Cadena de Conexión
