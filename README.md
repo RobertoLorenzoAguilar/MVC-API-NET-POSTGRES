@@ -15,7 +15,8 @@ Este README proporciona instrucciones detalladas para configurar y trabajar con 
 9. [Configurar la Cadena de Conexión en appsettings.json](#paso-9-configurar-la-cadena-de-conexión-en-appsettingsjson)
 10. [Configurar el Contexto en Program.cs](#paso-10-configurar-el-contexto-en-programcs)
 11. [Agregar un Controlador Vacío](#paso-11-agregar-un-controlador-vacío)
-12. [Referencias de programas](#referencias-de-programas)
+12. [Testeando la API](#testeand-la-api)
+13. [Referencias de programas](#testeand-la-api)
 
 ## Paso 1: Bosquejos de primeras pantallas y diagrama entidad relación.
 
@@ -291,7 +292,9 @@ namespace WebContratos.Controllers
 }
 
 ```
-
+## Paso 11: Testeando la API
+Se puede apreciar cómo se genera el token y se hacen peticiones para validar si tiene permisos, simulando un inicio de sesión.
+<img src="Images/peticiones.gif">
 
 
 ¡Listo! Ahora su proyecto ASP.NET Core API está configurado para trabajar con la base de datos PostgreSQL utilizando Entity Framework Core. Si tiene alguna pregunta o necesita más ayuda, no dude en consultar la documentación oficial de ASP.NET Core y Entity Framework Core.
