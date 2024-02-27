@@ -6,6 +6,9 @@ Este README proporciona instrucciones detalladas para configurar y trabajar con 
 
 Antes de comenzar, es importante diseñar la estructura de la base de datos. Asegúrese de tener un diseño claro de las tablas y relaciones necesarias para su aplicación.
 
+<img src="Images/bosquejoUsuario.png">
+
+
 ## Paso 2: Crear Rol de Usuario y Asignarlo a la Base de Datos
 
 Primero, creamos un rol de usuario en PostgreSQL y lo asignamos a la base de datos. Por ejemplo:
