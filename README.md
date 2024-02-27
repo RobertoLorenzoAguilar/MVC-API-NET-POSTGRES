@@ -1,57 +1,83 @@
-# Guía de Configuración de Base de Datos y Entorno de Desarrollo
+# README
 
-Este documento proporciona una guía paso a paso para configurar la base de datos y el entorno de desarrollo necesarios para el proyecto.
+Este README proporciona instrucciones detalladas para configurar y trabajar con una base de datos PostgreSQL en un proyecto de ASP.NET Core API, utilizando Entity Framework Core como ORM.
 
-## 1. Diseño de la Base de Datos
+## Paso 1: Diseñar la Base de Datos
 
-El diseño de la base de datos debe incluir todas las tablas necesarias, relaciones entre tablas y campos pertinentes para el proyecto. A continuación, se detalla el diseño propuesto:
+Antes de comenzar, es importante diseñar la estructura de la base de datos. Asegúrese de tener un diseño claro de las tablas y relaciones necesarias para su aplicación.
 
-- Tabla 1: 
-  - Campos: 
-  - Relaciones: 
+## Paso 2: Crear Rol de Usuario y Asignarlo a la Base de Datos
 
-- Tabla 2:
-  - Campos:
-  - Relaciones:
-
-[//]: # (Añadir más tablas según sea necesario)
-
-## 2. Crear Rol de Usuario y Asignarlo a la Base de Datos
-
-Es importante asignar un rol de usuario con los permisos adecuados para acceder y administrar la base de datos. Ejecutar el siguiente comando en PostgreSQL:
+Primero, creamos un rol de usuario en PostgreSQL y lo asignamos a la base de datos. Por ejemplo:
 
 ```sql
 CREATE USER robert WITH SUPERUSER LOGIN PASSWORD 'root';
 ```
 
-## 3. Crear la Base de Datos en PostgreSQL
+## Paso 3: Crear la Base de Datos en PostgreSQL
 
-Utilizando el comando `createdb`, podemos crear la base de datos con el propietario especificado:
+Utilizamos el siguiente comando para crear la base de datos en PostgreSQL:
 
-```bash
-createdb contrato_db --owner=robert --template=template0
+```sql
+CREATE DATABASE contrato_db WITH OWNER robert TEMPLATE template0;
 ```
 
-## 4. Importar en Caso de Ya Tenerla
+## Paso 4: Importar en Caso de Ya Tenerla
 
-En caso de tener una base de datos existente, se puede importar utilizando herramientas como `pg_restore` o `psql`.
+En caso de tener un respaldo de la base de datos, podemos importarlo para restaurar los datos.
 
-## 5. Conexión con DataGrip
+## Paso 5: Crear un Proyecto ASP.NET Core API
 
-Utilizar DataGrip u otro cliente PostgreSQL para conectarse a la base de datos recién creada.
+Instale Microsoft Visual Studio y seleccione las herramientas de ASP.NET Web para crear un proyecto del tipo ASP.NET Core API.
 
-## 6. Restaurar la Base de Datos en Caso de Tener un Backup
+## Paso 6: Instalar Entity Framework y Npgsql
 
-En caso de tener un respaldo de la base de datos, se puede restaurar utilizando herramientas como `pg_restore` o `psql`.
+Instale las siguientes dependencias de NuGet para trabajar con Entity Framework Core y PostgreSQL:
 
-## 7. Checar el Diagrama desde el Gestor de BD
+- `Microsoft.EntityFrameworkCore.Tools`
+- `Npgsql.EntityFrameworkCore.PostgreSQL`
 
-Se puede generar un diagrama de la base de datos desde el mismo gestor de base de datos para tener una visualización clara de la estructura.
+## Paso 7: Generar los Modelos desde la Base de Datos
 
-## 8. Instalación de Microsoft Visual Studio y Herramientas de Asp.net Web
+Utilizamos el comando Scaffold-DbContext para generar los modelos a partir de la base de datos:
 
-Para el desarrollo del proyecto, es necesario instalar Microsoft Visual Studio y seleccionar las herramientas de Asp.net Web durante la instalación.
+```bash
+Scaffold-DbContext "Host=localhost;Database=contrato_db;Username=robert;Password=root;Encrypt=False" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models
+```
 
-¡El entorno de desarrollo y la base de datos ahora están configurados y listos para comenzar a trabajar en el proyecto!
+## Paso 8: Configurar la Cadena de Conexión
 
-[//]: # (Añadir más pasos según sea necesario)
+Mueva la cadena de conexión generada en `ContratoDbContext.cs` y asegúrese de mantener la información sensible fuera del código fuente.
+
+## Paso 9: Configurar la Cadena de Conexión en appsettings.json
+
+Agregue la cadena de conexión en `appsettings.json` como sigue:
+
+```json
+{
+  "ConnectionStrings": {
+    "cadenaSql": "Host=localhost;Database=contrato_db;Username=robert;Password=root"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+
+## Paso 10: Configurar el Contexto en Program.cs
+
+Agregue el contexto creado en `Program.cs` de la siguiente manera:
+
+```csharp
+builder.Services.AddDbContext<ContratoDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("cadenaSql")));
+```
+
+## Paso 11: Agregar un Controlador Vacío
+
+Agregue un controlador vacío en su proyecto para interactuar con la base de datos según sea necesario.
+
+¡Listo! Ahora su proyecto ASP.NET Core API está configurado para trabajar con la base de datos PostgreSQL utilizando Entity Framework Core. Si tiene alguna pregunta o necesita más ayuda, no dude en consultar la documentación oficial de ASP.NET Core y Entity Framework Core.
