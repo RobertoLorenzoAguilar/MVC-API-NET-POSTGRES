@@ -48,6 +48,39 @@ Utilizamos el siguiente comando para crear la base de datos en PostgreSQL:
 CREATE DATABASE contrato_db WITH OWNER robert TEMPLATE template0;
 ```
 
+```sql
+CREATE TABLE public.modulo (
+    id integer NOT NULL,
+    nombre character varying(100) NOT NULL
+);
+
+CREATE TABLE public.permiso (
+    id integer NOT NULL,
+    nombre character varying(100) NOT NULL,
+    descripcion text
+);
+
+CREATE TABLE public.rol (
+    id integer NOT NULL,
+    nombre character varying(100) NOT NULL
+);
+
+CREATE TABLE public.rol_permiso_modulo (
+    id integer NOT NULL,
+    rol_id integer NOT NULL,
+    permiso_id integer NOT NULL,
+    modulo_id integer NOT NULL
+);
+
+CREATE TABLE public.usuario (
+    id integer NOT NULL,
+    nombre character varying(100) NOT NULL,
+    correo character varying(100) NOT NULL,
+    clave character varying(50),
+    rol_id integer
+);
+```
+
 ## Paso 4: Usando Datagrip el gestor de base de datos, se es posible restaurar y exportar.
 
 En caso de tener un respaldo de la base de datos, podemos importarlo para restaurar los datos.
