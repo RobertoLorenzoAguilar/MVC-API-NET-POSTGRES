@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocio.Interfaces
 {
-    internal interface IPermiso
+    public  interface IPermiso
     {
         List<Permiso> GetPermisos();
     }

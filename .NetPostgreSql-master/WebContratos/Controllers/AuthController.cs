@@ -6,7 +6,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Dato.Model;
-using Dato;
+using Negocio.Interfaces;
+
 
 
 namespace WebContratos.Controllers
@@ -14,12 +15,12 @@ namespace WebContratos.Controllers
     [ApiController]
     [Route("[controller]")]
     public class AuthController : ControllerBase
-    {       
+    {
+        IPermiso _permiso;
 
-        private static ContratoDbContext? _contexAuth;
-        public AuthController(ContratoDbContext context)
+        public AuthController(IPermiso _permiso)
         {
-            _contexAuth = context;
+            this._permiso = _permiso;
         }
 
         [HttpGet]
@@ -81,19 +82,20 @@ namespace WebContratos.Controllers
         [Route("permiso")]
         public async Task<ActionResult<IEnumerable<Permiso>>> GetPermisos()
         {
-            return await _contexAuth.Permisos.ToListAsync();
+            var permisos =  _permiso.GetPermisos();
+            return Ok(permisos);
         }
 
-        #region  Seccion modulos solo para prueba
+        //#region  Seccion modulos solo para prueba
 
-        [HttpGet]
-        [Route("GetModulos")]
-        //[Route("modulo")]
-        public async Task<ActionResult<IEnumerable<Modulo>>> GetModulos()
-        {
-            return await _contexAuth.Modulos.ToListAsync();
-        }
-        #endregion
+        //[HttpGet]
+        //[Route("GetModulos")]
+        ////[Route("modulo")]
+        //public async Task<ActionResult<IEnumerable<Modulo>>> GetModulos()
+        //{
+        //    return await _permiso.m.ToListAsync();
+        //}
+        //#endregion
 
     }
 }
