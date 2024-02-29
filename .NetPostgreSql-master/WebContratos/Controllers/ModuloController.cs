@@ -7,10 +7,10 @@ namespace WebContratos.Controllers
 {
     public class ModuloController : Controller
     {
-        IModulo _Modulo;
-        public ModuloController(IModulo _Modulo)
+        IModulo _modulo;
+        public ModuloController(IModulo _modulo)
         {
-            this._Modulo = _Modulo;
+            this._modulo = _modulo;
         }
 
         [HttpGet]
@@ -18,7 +18,7 @@ namespace WebContratos.Controllers
         [Authorize("leer:modulos")] // Se requiere el ámbito "read:usuarios"
         public IActionResult GetModulos()
         {
-            var Modulos = _Modulo.GetModulos();
+            var Modulos = _modulo.GetModulos();
             return Ok(new { Modulos });
         }
         
@@ -28,7 +28,7 @@ namespace WebContratos.Controllers
         [Authorize("agregar:modulos")] // Se requiere el ámbito "eliminar:usuarios"
         public IActionResult AgregarModulo()
         {
-            var Modulos = _Modulo.GetModulos();
+            var Modulos = _modulo.GetModulos();
             return Ok(new { Modulos });
         }
 
@@ -37,7 +37,7 @@ namespace WebContratos.Controllers
         [Authorize("eliminar:modulos")] // Se requiere el ámbito "eliminar:usuarios"
         public IActionResult EliminarModulo(int IdModulo)
         {
-            _Modulo.EliminarModulos(IdModulo);
+            _modulo.EliminarModulos(IdModulo);
             return Ok();
         }
 
@@ -46,7 +46,7 @@ namespace WebContratos.Controllers
         [Authorize("actualizar:modulos")] // Se requiere el ámbito "eliminar:usuarios"
         public IActionResult ActualizarModulo()
         {
-            var Modulos = _Modulo.GetModulos();
+            var Modulos = _modulo.GetModulos();
             return Ok(new { Modulos });
         }
     }
