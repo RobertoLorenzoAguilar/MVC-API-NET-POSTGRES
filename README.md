@@ -343,7 +343,7 @@ como puedes observar se traen los datos de la tabla.
 7. [ScreenToGift](https://www.screentogif.com/): Herramienta para generar GIF's.
 8. [Visual Studio Code](https://code.visualstudio.com/): Para trabajar la parte del Front.
 9. [Setear Variable Globales en Postman](https://www.youtube.com/watch?v=im7NZwbTqKY): Para facilitar el uso token en las peticiones solo se puede en la versión escritorio.
-10. [Excelente página para verificar como se está generando el token]([https://www.youtube.com/watch?v=im7NZwbTqKY](https://jwt.io/)): validador de token.
+10. [Excelente página para verificar como se está generando el token](https://jwt.io/): validador de token.
 
 
 ¡Listo! Ahora su proyecto ASP.NET Core API está configurado para trabajar con la base de datos PostgreSQL utilizando Entity Framework Core. Si tiene alguna pregunta o necesita más ayuda, no dude en consultar la documentación oficial de ASP.NET Core y Entity Framework Core.
