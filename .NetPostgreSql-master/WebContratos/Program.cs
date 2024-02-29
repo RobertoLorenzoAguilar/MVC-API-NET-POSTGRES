@@ -46,6 +46,19 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("read:usuarios", policy => policy.RequireClaim("scope", "read:usuarios"));
 });
 // final JWT
+
+//politicas de dominio
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PoliticaCliente",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddControllers();
 var app = builder.Build();
 
@@ -56,6 +69,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
+
+app.UseCors("PoliticaCliente");
+
+
+//end region politicas de dominio
 
 app.UseHttpsRedirection();
 
