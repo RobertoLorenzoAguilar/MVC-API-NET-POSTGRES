@@ -13,5 +13,5 @@ public partial class Usuario
 
     public string? Clave { get; set; }
 
-    public int? RolId { get; set; }
+    public int RolId { get; set; }
 }

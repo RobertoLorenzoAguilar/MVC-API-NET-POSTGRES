@@ -7,6 +7,8 @@ using System.Security.Claims;
 using System.Text;
 using Dato.Model;
 using Negocio.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Dato;
 
 
 
@@ -16,86 +18,69 @@ namespace WebContratos.Controllers
     [Route("[controller]")]
     public class AuthController : ControllerBase
     {
-        IPermiso _permiso;
+        IUsuario _usuario;
 
-        public AuthController(IPermiso _permiso)
+        public AuthController(IUsuario _usuario)
         {
-            this._permiso = _permiso;
-        }
-
-        [HttpGet]
-        [Route("usuarios")]
-        [Authorize("read:usuarios")] // Se requiere el ámbito "read:usuarios"
-        public IActionResult GetUsuarios()
-        {
-            // Lógica para obtener y devolver la lista de usuarios
-            return Ok(new { usuarios = ObtenerListaUsuarios() });
-        }
-
-        private string[] ObtenerListaUsuarios()
-        {
-            // Simulación de la obtención de usuarios desde una base de datos u otro origen
-            return new string[] { "Usuario1", "Usuario2", "Usuario3" };
+            this._usuario = _usuario;
         }
 
 
         #region inicio sesion
         [HttpPost]
         [Route("login")]
-        public IActionResult Login()
+        public IActionResult Login(string correo, string clave)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("aquí_va_tu_clave_secretaaquí_va_tu_clave_secretaaquí_va_tu_clave_secreta");
-            var tokenDescriptor = new SecurityTokenDescriptor
+            if (!(string.IsNullOrEmpty(correo) && !string.IsNullOrEmpty(clave))) // valida si viene vacia
             {
-                Subject = new ClaimsIdentity(new Claim[]
+
+                //validar si existe el usuario en base de datos
+                var usuario = _usuario.GetUsuarioByCredenciales(correo, clave);
+
+                if (usuario != null)
                 {
-                new Claim(ClaimTypes.Name, "usuario_de_ejemplo"),
-                //new Claim("Scope", "read:usuarios")
-                new Claim("Scope", "read:usuariosw")
-                }),
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return Ok(new
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var key = Encoding.ASCII.GetBytes("aquí_va_tu_clave_secretaaquí_va_tu_clave_secretaaquí_va_tu_clave_secreta");
+
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new ClaimsIdentity(new Claim[]
+                       {
+                           //new Claim("Scope", "leer:permisos")                       
+                       }),
+                        Expires = DateTime.UtcNow.AddHours(1),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    };
+
+
+                    //si no es nulo traer el listado de permisos por rol 
+                    var lstPermisos = _usuario.GetPermisosModuloByRol(usuario.RolId);
+                    // Agregar las nuevas claims basadas en los permisos obtenidos
+                    foreach (var permisoModulo in lstPermisos)
+                    {
+                        tokenDescriptor.Subject.AddClaim(new Claim("Scope", permisoModulo));
+                    }
+
+                    var token = tokenHandler.CreateToken(tokenDescriptor);
+                    return Ok(new
+                    {
+                        token = tokenHandler.WriteToken(token)
+                    });
+
+                }
+                else
+                {
+
+                    return BadRequest(); // no existe el usuario
+                }
+
+            }
+            else
             {
-                token = tokenHandler.WriteToken(token)
-            });
-        }
 
-        [HttpGet]
-        [Route("auth")]
-        [Authorize] // Agregamos el atributo [Authorize] para requerir autorización
-        public void Get()
-        {
-            var rng = new Random();
+                return BadRequest(); // credenciales vacias
+            }
         }
-
-        //Con este cambio, se requerirá que el cliente proporcione un token de acceso válido
-        //(o cualquier otro mecanismo de autorización configurado en tu aplicación) 
-        //para poder llamar a este endpoint GET /auth.Si el cliente no proporciona 
-        //credenciales válidas, recibirá un código de estado de respuesta 401 Unauthorized.
         #endregion
-
-        [HttpGet]
-        [Route("permiso")]
-        public async Task<ActionResult<IEnumerable<Permiso>>> GetPermisos()
-        {
-            var permisos =  _permiso.GetPermisos();
-            return Ok(permisos);
-        }
-
-        //#region  Seccion modulos solo para prueba
-
-        //[HttpGet]
-        //[Route("GetModulos")]
-        ////[Route("modulo")]
-        //public async Task<ActionResult<IEnumerable<Modulo>>> GetModulos()
-        //{
-        //    return await _permiso.m.ToListAsync();
-        //}
-        //#endregion
-
     }
 }

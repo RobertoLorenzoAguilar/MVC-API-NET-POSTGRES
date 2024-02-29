@@ -1,13 +1,10 @@
-﻿using Dato.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Dato;
+using Dato.Model;
+using Microsoft.Extensions.Primitives;
 
 namespace Negocio.Interfaces
 {
-    public  interface IPermiso
+    public interface IPermiso
     {
         List<Permiso> GetPermisos();
     }

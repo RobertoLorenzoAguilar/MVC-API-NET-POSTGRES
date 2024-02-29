@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|solutionrelative:webcontratos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\controllers\\permisocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|solutionrelative:webcontratos\\controllers\\permisocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|solutionrelative:webcontratos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|solutionrelative:webcontratos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,32 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\appsettings.json",
-              "RelativeDocumentMoniker": "WebContratos\\appsettings.json",
-              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\appsettings.json",
-              "RelativeToolTip": "WebContratos\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-02-29T15:11:04.855Z",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "WebContratos\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "WebContratos\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAxwDkAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T19:54:16.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Program.cs",
               "RelativeDocumentMoniker": "WebContratos\\Program.cs",
               "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Program.cs",
               "RelativeToolTip": "WebContratos\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAADsAAAADAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAQwC4AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T12:26:38.471Z",
+              "WhenOpened": "2024-02-29T19:45:25.728Z",
               "EditorCaption": ""
             },
             {
@@ -62,21 +62,22 @@
               "RelativeDocumentMoniker": "Negocio\\Clases\\LogicaPermiso.cs",
               "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Clases\\LogicaPermiso.cs",
               "RelativeToolTip": "Negocio\\Clases\\LogicaPermiso.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T12:18:53.934Z"
+              "WhenOpened": "2024-02-29T19:42:34.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "WebContratos\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "WebContratos\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAgwC4AAAAMAAAA",
+              "DocumentIndex": 0,
+              "Title": "PermisoController.cs",
+              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\PermisoController.cs",
+              "RelativeDocumentMoniker": "WebContratos\\Controllers\\PermisoController.cs",
+              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\PermisoController.cs",
+              "RelativeToolTip": "WebContratos\\Controllers\\PermisoController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA5wCcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T22:46:03.208Z",
+              "WhenOpened": "2024-02-29T18:09:25.192Z",
               "EditorCaption": ""
             }
           ]

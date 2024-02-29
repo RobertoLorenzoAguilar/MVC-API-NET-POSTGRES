@@ -1,24 +1,39 @@
 [
   {
     "ContainingType": "WebContratos.Controllers.AuthController",
-    "Method": "Get",
-    "RelativePath": "Auth/auth",
+    "Method": "Login",
+    "RelativePath": "Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "correo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "clave",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.PermisoController",
+    "Method": "GetPermisos",
+    "RelativePath": "permisos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "WebContratos.Controllers.AuthController",
-    "Method": "Login",
-    "RelativePath": "Auth/login",
+    "ContainingType": "WebContratos.Controllers.PermisoController",
+    "Method": "AgregarPermiso",
+    "RelativePath": "permisos/agregar",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -26,30 +41,10 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebContratos.Controllers.AuthController",
-    "Method": "GetPermisos",
-    "RelativePath": "Auth/permiso",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Dato.Model.Permiso, Datos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebContratos.Controllers.AuthController",
-    "Method": "GetUsuarios",
-    "RelativePath": "Auth/usuarios",
-    "HttpMethod": "GET",
+    "ContainingType": "WebContratos.Controllers.PermisoController",
+    "Method": "EliminarPermiso",
+    "RelativePath": "permisos/eliminar",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

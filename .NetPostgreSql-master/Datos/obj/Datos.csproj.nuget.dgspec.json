@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Datos\\Datos.csproj",
         "projectName": "Datos",
         "projectPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Datos\\Datos.csproj",
-        "packagesPath": "C:\\Users\\BrdkBug\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
         "outputPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\BrdkBug\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

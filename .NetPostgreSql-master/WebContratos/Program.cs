@@ -18,6 +18,7 @@ builder.Services.AddDbContext<ContratoDbContext>(options => options.UseNpgsql(bu
 
 //Configurar las interfaces para que el controlador las pueda usar
 builder.Services.AddScoped<IPermiso, LogicaPermiso>();
+builder.Services.AddScoped<IUsuario, LogicaUsuario>();
 
 
 //agregar en la documentación la parte 
@@ -43,7 +44,9 @@ builder.Services.AddAuthentication(auth =>
 // Definir políticas de autorización basadas en ámbitos
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("read:usuarios", policy => policy.RequireClaim("scope", "read:usuarios"));
+    options.AddPolicy("agregar:permisos", policy => policy.RequireClaim("scope", "agregar:permisos"));
+    options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));    
+    options.AddPolicy("eliminar:permisos", policy => policy.RequireClaim("scope", "eliminar:permisos"));
 });
 // final JWT
 
@@ -68,14 +71,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    //politicas de dominio
+    app.UseCors("PoliticaCliente");
 }
-
-
-
-app.UseCors("PoliticaCliente");
-
-
-//end region politicas de dominio
 
 app.UseHttpsRedirection();
 
