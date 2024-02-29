@@ -2,8 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using WebContratos.Controllers;
-using WebContratos.Models;
+using Dato;
 
 var builder = WebApplication.CreateBuilder(args);
 

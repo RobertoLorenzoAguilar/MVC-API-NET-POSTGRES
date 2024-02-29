@@ -1,0 +1,15 @@
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\bin\Debug\net8.0\Datos.deps.json
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\bin\Debug\net8.0\Datos.runtimeconfig.json
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\bin\Debug\net8.0\Datos.dll
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\bin\Debug\net8.0\Datos.pdb
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.csproj.AssemblyReference.cache
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.AssemblyInfoInputs.cache
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.AssemblyInfo.cs
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.csproj.CoreCompileInputs.cache
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.sourcelink.json
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.dll
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\refint\Datos.dll
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.pdb
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\Datos.genruntimeconfig.cache
+C:\proyecto\.NetPostgreSql\.NetPostgreSql-master\Datos\obj\Debug\net8.0\ref\Datos.dll

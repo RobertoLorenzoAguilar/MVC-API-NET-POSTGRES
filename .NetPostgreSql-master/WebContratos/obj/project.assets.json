@@ -1112,6 +1112,33 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "Datos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.2",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Datos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Datos.dll": {}
+        }
+      },
+      "Negocios/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Datos": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Negocios.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Negocios.dll": {}
+        }
       }
     }
   },
@@ -3039,6 +3066,16 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Datos/1.0.0": {
+      "type": "project",
+      "path": "../Datos/Datos.csproj",
+      "msbuildProject": "../Datos/Datos.csproj"
+    },
+    "Negocios/1.0.0": {
+      "type": "project",
+      "path": "../Negocio/Negocios.csproj",
+      "msbuildProject": "../Negocio/Negocios.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3047,6 +3084,7 @@
       "Microsoft.AspNetCore.OpenApi >= 8.0.2",
       "Microsoft.EntityFrameworkCore >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.2",
+      "Negocios >= 1.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.2",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -3057,11 +3095,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj",
+      "projectUniqueName": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj",
       "projectName": "WebContratos",
-      "projectPath": "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj",
+      "projectPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\WebContratos.csproj",
       "packagesPath": "C:\\Users\\BrdkBug\\.nuget\\packages\\",
-      "outputPath": "C:\\proyecto\\.NetPostgreSql-master\\WebContratos\\obj\\",
+      "outputPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\BrdkBug\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3077,7 +3115,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Negocios.csproj": {
+              "projectPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Negocios.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
