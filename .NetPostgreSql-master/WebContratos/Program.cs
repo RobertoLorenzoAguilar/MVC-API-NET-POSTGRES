@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContratoDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("cadenaSql")));
 
 //Configurar las interfaces para que el controlador las pueda usar
-builder.Services.AddScoped<IPermiso, LogicaPermiso>();
+builder.Services.AddScoped<IModulo, LogicaModulo>();
 builder.Services.AddScoped<IUsuario, LogicaUsuario>();
 
 
@@ -44,9 +44,10 @@ builder.Services.AddAuthentication(auth =>
 // Definir políticas de autorización basadas en ámbitos
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("agregar:permisos", policy => policy.RequireClaim("scope", "agregar:permisos"));
-    options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));    
-    options.AddPolicy("eliminar:permisos", policy => policy.RequireClaim("scope", "eliminar:permisos"));
+    options.AddPolicy("agregar:modulos", policy => policy.RequireClaim("scope", "agregar:modulos"));
+    options.AddPolicy("leer:modulos", policy => policy.RequireClaim("scope", "leer:modulos"));    
+    options.AddPolicy("eliminar:modulos", policy => policy.RequireClaim("scope", "eliminar:modulos"));
+    options.AddPolicy("actualizar:modulos", policy => policy.RequireClaim("scope", "actualizar:modulos"));
 });
 // final JWT
 

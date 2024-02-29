@@ -4,8 +4,9 @@ using Microsoft.Extensions.Primitives;
 
 namespace Negocio.Interfaces
 {
-    public interface IPermiso
+    public interface IModulo
     {
-        List<Permiso> GetPermisos();
+        List<Modulo> GetModulos();
+        void EliminarModulos(int IdModulo);
     }
 }

@@ -21,9 +21,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebContratos.Controllers.PermisoController",
-    "Method": "GetPermisos",
-    "RelativePath": "permisos",
+    "ContainingType": "WebContratos.Controllers.ModuloController",
+    "Method": "GetModulos",
+    "RelativePath": "modulos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -31,9 +31,19 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebContratos.Controllers.PermisoController",
-    "Method": "AgregarPermiso",
-    "RelativePath": "permisos/agregar",
+    "ContainingType": "WebContratos.Controllers.ModuloController",
+    "Method": "ActualizarModulo",
+    "RelativePath": "modulos/actualizar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.ModuloController",
+    "Method": "AgregarModulo",
+    "RelativePath": "modulos/agregar",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -41,13 +51,19 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebContratos.Controllers.PermisoController",
-    "Method": "EliminarPermiso",
-    "RelativePath": "permisos/eliminar",
+    "ContainingType": "WebContratos.Controllers.ModuloController",
+    "Method": "EliminarModulo",
+    "RelativePath": "modulos/eliminar",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "IdModulo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   }
 ]
