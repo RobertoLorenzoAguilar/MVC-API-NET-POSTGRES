@@ -1,54 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\controllers\\modulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|solutionrelative:webcontratos\\controllers\\modulocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|solutionrelative:webcontratos\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "WebContratos\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "WebContratos\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T22:56:24.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ModuloController.cs",
-              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\ModuloController.cs",
-              "RelativeDocumentMoniker": "WebContratos\\Controllers\\ModuloController.cs",
-              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\ModuloController.cs",
-              "RelativeToolTip": "WebContratos\\Controllers\\ModuloController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAwwDQAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T22:56:23.202Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

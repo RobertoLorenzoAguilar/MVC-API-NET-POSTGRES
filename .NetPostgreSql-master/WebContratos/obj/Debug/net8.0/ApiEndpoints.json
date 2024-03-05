@@ -65,5 +65,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.PermisoController",
+    "Method": "GetPermisosByRol",
+    "RelativePath": "permisos/rol",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

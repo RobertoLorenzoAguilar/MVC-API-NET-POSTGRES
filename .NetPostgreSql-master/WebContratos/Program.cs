@@ -5,6 +5,8 @@ using System.Text;
 using Dato;
 using Negocio.Clases;
 using Negocio.Interfaces;
+using Negocios.Interfaces;
+using Negocios.Clases;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +18,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContratoDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("cadenaSql")));
 
-//Configurar las interfaces para que el controlador las pueda usar
+//Configurar las interfaces para que el controlador las pueda exponer
 builder.Services.AddScoped<IModulo, LogicaModulo>();
 builder.Services.AddScoped<IUsuario, LogicaUsuario>();
+builder.Services.AddScoped<IPermiso, LogicaPermiso>();
 
 
 //agregar en la documentación la parte 
@@ -48,6 +51,7 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("leer:modulos", policy => policy.RequireClaim("scope", "leer:modulos"));    
     options.AddPolicy("eliminar:modulos", policy => policy.RequireClaim("scope", "eliminar:modulos"));
     options.AddPolicy("actualizar:modulos", policy => policy.RequireClaim("scope", "actualizar:modulos"));
+    options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));
 });
 // final JWT
 

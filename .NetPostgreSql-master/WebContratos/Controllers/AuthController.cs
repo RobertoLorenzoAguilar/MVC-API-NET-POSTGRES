@@ -61,11 +61,19 @@ namespace WebContratos.Controllers
                         tokenDescriptor.Subject.AddClaim(new Claim("Scope", permisoModulo));
                     }
 
-                    var token = tokenHandler.CreateToken(tokenDescriptor);
+
+                    //agregar rol id usuario
+
+                    tokenDescriptor.Subject.AddClaim(new Claim("Rol", usuario.RolId.ToString()));
+
+                    //var token = tokenHandler.CreateToken(tokenDescriptor);
+
+                    TokenManager.SetToken(tokenHandler, tokenDescriptor);
+
                     return Ok(new
                     {
-                        token = tokenHandler.WriteToken(token)
-                    });
+                        token = TokenManager.GetToken()
+                    }); ;
 
                 }
                 else
@@ -82,5 +90,22 @@ namespace WebContratos.Controllers
             }
         }
         #endregion
+    }
+
+    public static class TokenManager
+    {
+        private static string _token;
+
+        public static void SetToken(JwtSecurityTokenHandler tokenHandler, SecurityTokenDescriptor tokenDescriptor)
+        {
+            //var tokenHandler = new JwtSecurityTokenHandler();
+            var _securityToken = tokenHandler.CreateToken(tokenDescriptor);
+            _token = tokenHandler.WriteToken(_securityToken);
+        }
+
+        public static string GetToken()
+        {
+            return _token;
+        }
     }
 }
