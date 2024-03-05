@@ -333,6 +333,52 @@ Se puede apreciar cómo se genera el token y se hacen peticiones para validar si
 como puedes observar se traen los datos de la tabla.
 <img src="Images/tbl_bd.png">
 
+# Guía para generar un CRUD en la API Catálogo "Permisos".
+
+Se agregaron dos bibliotecas de clases para las capas de Negocios, Datos.
+Se pretende agregar una más de infraestructura.
+
+Nuestra lógica de capas está distribuida de la siguiente manera: Datos <- Negocio <- Presentación.
+
+
+# Paso 1: En la capa de negocios en la carpeta interfaces, crear la interfaz pública IPermiso.cs.
+<img src="Images/interface_permisos.png">
+
+# Paso 2. En la capa de negocios en la carpeta clases, crea la clase LogicaPermiso.cs pública e IPermiso.cs.
+<img src="Images/crear_clase_logica.png">
+<img src="Images/get_permiso_logica.png">
+
+# Paso 3 En la capa de presentación  (WebContratos) crear un nuevo controlador con la nomenclatura UpperCase. En este caso particular PermisoController.
+En el constructor del controlador Permiso Controller se pasará el contexto de la interfaz permiso y mediante el End-Point GetPermisos se accederá a los permisos.
+
+<img src="Images/controller_get_permiso.png">
+
+# Paso 4 En la capa de presentación exponemos la interfaz y la lógica de clase para que el controlador para dar acceso a los End-Point's.
+
+<img src="Images/exponer_interfaz_program.cs.png">
+
+# Paso 5 En la capa de presentación en program.cs agregamos las políticas de autorización para el ámbito leer:permiso.
+
+<img src="Images/Authorization.png">
+
+# Paso 6 Ejecutamos f5 para arrancar nuestro proyecto según nuestra configuración de SWAGGER. Mostrará nuestros End-Points.
+<img src="Images/swagger_view.png">
+
+# Paso 7. Si realizamos un GetPermiso para traernos el permiso, no podremos, ya que necesitamos enviar el token y el usuario deberá tener el permiso para leer el módulo de permisos.
+<img src="Images/unahutorized.png">
+
+# Paso 8 Descargar Postman y setear variable global con el token para hacer poder hacer llamada a nuestros End-Point's protegidos.
+<img src="Images/post_login.png">
+<img src="Images/gett_permiso_Seteando_token.png">
+<img src="Images/descargar_postman_variabless_globales.png">
+
+# Paso 9 Consulta a controller permisos.
+<img src="Images/back_end_consulta_permisos.png">
+
+# Paso 10 Agregar a nivel Base de datos en la tabla los permisos de nuevo rol.
+<img src="Images/permiso_db.png">
+
+
 # Tecnologías
 1. [Balsamiq](https://balsamiq.com/): Herramienta para diseñar bosquejos.
 2. [DataGrip](https://www.jetbrains.com/datagrip/): Entorno de desarrollo para bases de datos.
