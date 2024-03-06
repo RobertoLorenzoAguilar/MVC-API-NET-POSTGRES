@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\webcontratos\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2943A536-4CFE-42E0-A453-DA97147BFDFB}|WebContratos\\WebContratos.csproj|solutionrelative:webcontratos\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0175A2C3-D050-449B-888E-3E4C031DD549}|Negocio\\Negocios.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\negocio\\clases\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0175A2C3-D050-449B-888E-3E4C031DD549}|Negocio\\Negocios.csproj|solutionrelative:negocio\\clases\\logicausuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0175A2C3-D050-449B-888E-3E4C031DD549}|Negocio\\Negocios.csproj|c:\\proyecto\\.netpostgresql\\.netpostgresql-master\\negocio\\clases\\logicapermiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0175A2C3-D050-449B-888E-3E4C031DD549}|Negocio\\Negocios.csproj|solutionrelative:negocio\\clases\\logicapermiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "WebContratos\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\WebContratos\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "WebContratos\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAArwCsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T20:50:12.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogicaUsuario.cs",
+              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Clases\\LogicaUsuario.cs",
+              "RelativeDocumentMoniker": "Negocio\\Clases\\LogicaUsuario.cs",
+              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Clases\\LogicaUsuario.cs",
+              "RelativeToolTip": "Negocio\\Clases\\LogicaUsuario.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAwwCEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T20:50:04.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LogicaPermiso.cs",
+              "DocumentMoniker": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Clases\\LogicaPermiso.cs",
+              "RelativeDocumentMoniker": "Negocio\\Clases\\LogicaPermiso.cs",
+              "ToolTip": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Clases\\LogicaPermiso.cs",
+              "RelativeToolTip": "Negocio\\Clases\\LogicaPermiso.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowBoAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T19:46:16.634Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

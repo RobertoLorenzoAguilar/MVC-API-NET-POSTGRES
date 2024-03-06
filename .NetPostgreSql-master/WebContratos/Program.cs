@@ -20,6 +20,7 @@ builder.Services.AddDbContext<ContratoDbContext>(options => options.UseNpgsql(bu
 
 //Configurar las interfaces para que el controlador las pueda exponer
 builder.Services.AddScoped<IModulo, LogicaModulo>();
+builder.Services.AddScoped<IAuh, LogicaAuh>();
 builder.Services.AddScoped<IUsuario, LogicaUsuario>();
 builder.Services.AddScoped<IPermiso, LogicaPermiso>();
 
@@ -52,6 +53,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("eliminar:modulos", policy => policy.RequireClaim("scope", "eliminar:modulos"));
     options.AddPolicy("actualizar:modulos", policy => policy.RequireClaim("scope", "actualizar:modulos"));
     options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));
+    options.AddPolicy("leer:usuarios", policy => policy.RequireClaim("scope", "leer:usuarios"));
+    options.AddPolicy("leer:usuariosbyid", policy => policy.RequireClaim("scope", "leer:usuariosbyid"));
+    options.AddPolicy("agregar:usuarios", policy => policy.RequireClaim("scope", "agregar:usuarios"));    
 });
 // final JWT
 

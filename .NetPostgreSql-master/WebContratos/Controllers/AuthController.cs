@@ -18,9 +18,9 @@ namespace WebContratos.Controllers
     [Route("[controller]")]
     public class AuthController : ControllerBase
     {
-        IUsuario _usuario;
+        IAuh _usuario;
 
-        public AuthController(IUsuario _usuario)
+        public AuthController(IAuh _usuario)
         {
             this._usuario = _usuario;
         }

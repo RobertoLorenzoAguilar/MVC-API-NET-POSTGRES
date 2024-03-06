@@ -75,5 +75,41 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.UsuarioController",
+    "Method": "GetUsuarios",
+    "RelativePath": "usuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.UsuarioController",
+    "Method": "AgregarUsuario",
+    "RelativePath": "usuarios/AgregarUsuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "Dato.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.UsuarioController",
+    "Method": "GetUsuariosId",
+    "RelativePath": "usuarios/GetUsuariosId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

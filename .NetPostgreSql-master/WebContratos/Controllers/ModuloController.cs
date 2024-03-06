@@ -18,14 +18,14 @@ namespace WebContratos.Controllers
         [Authorize("leer:modulos")] // Se requiere el ámbito "read:usuarios"
         public IActionResult GetModulos()
         {
-            var Modulos = _modulo.GetModulos();
-            return Ok(new { Modulos });
+            var resultado = _modulo.GetModulos();
+            return Ok(new { resultado });
         }
         
         
         [HttpPost]
         [Route("modulos/agregar")]
-        [Authorize("agregar:modulos")] // Se requiere el ámbito "eliminar:usuarios"
+        [Authorize("agregar:modulos")]
         public IActionResult AgregarModulo()
         {
             var Modulos = _modulo.GetModulos();
@@ -34,7 +34,7 @@ namespace WebContratos.Controllers
 
         [HttpDelete]
         [Route("modulos/eliminar")]
-        [Authorize("eliminar:modulos")] // Se requiere el ámbito "eliminar:usuarios"
+        [Authorize("eliminar:modulos")] 
         public IActionResult EliminarModulo(int IdModulo)
         {
             _modulo.EliminarModulos(IdModulo);
@@ -43,7 +43,7 @@ namespace WebContratos.Controllers
 
         [HttpPut]
         [Route("modulos/actualizar")]
-        [Authorize("actualizar:modulos")] // Se requiere el ámbito "eliminar:usuarios"
+        [Authorize("actualizar:modulos")] 
         public IActionResult ActualizarModulo()
         {
             var Modulos = _modulo.GetModulos();
