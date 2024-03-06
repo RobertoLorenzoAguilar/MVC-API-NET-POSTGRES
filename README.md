@@ -338,9 +338,15 @@ como puedes observar se traen los datos de la tabla.
 Se agregaron dos bibliotecas de clases para las capas de Negocios, Datos. Se pretende agregar una más de infraestructura. Nuestra lógica de capas está distribuida de la siguiente manera: Datos <- Negocio <- Presentación.
 
 #### Recuerda que implementar biblioteca de clases requieres descargar el paquete en la capa de datps entity framework tools
+
+
+``` 
 dotnet tool install --global dotnet-ef   // para setear y hacer uso en la terminal
-
-
+``` 
+despues generas los modelos y el contexto.
+``` 
+dotnet ef dbcontext scaffold "Host=localhost;Database=contrato_db;Username=robert;Password=root;" Npgsql.EntityFrameworkCore.PostgreSQL -o Models
+``` 
 ### Paso 1: Interfaz IPermiso
 En la carpeta interfaces de la capa de negocios, crear la interfaz pública `IPermiso.cs`.
 ![IPermiso](Images/interface_permisos.png)
