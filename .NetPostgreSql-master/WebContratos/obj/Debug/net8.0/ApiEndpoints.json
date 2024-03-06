@@ -77,6 +77,42 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebContratos.Controllers.RolController",
+    "Method": "GetRols",
+    "RelativePath": "rol",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.RolController",
+    "Method": "AgregarRol",
+    "RelativePath": "Rols/AgregarRol",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Rol",
+        "Type": "Datos.Models.Rol",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.RolController",
+    "Method": "GetRolsId",
+    "RelativePath": "Rols/GetRolsId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebContratos.Controllers.UsuarioController",
     "Method": "GetUsuarios",
     "RelativePath": "usuarios",
@@ -96,7 +132,23 @@
     "Parameters": [
       {
         "Name": "usuario",
-        "Type": "Dato.Usuario",
+        "Type": "Datos.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.UsuarioController",
+    "Method": "EliminarUsuario",
+    "RelativePath": "usuarios/eliminar",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "Datos.Models.Usuario",
         "IsRequired": true
       }
     ],

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dato;
+namespace Datos.Models;
 
 public partial class Usuario
 {
@@ -13,5 +13,7 @@ public partial class Usuario
 
     public string? Clave { get; set; }
 
-    public int RolId { get; set; }
+    public int? RolId { get; set; }
+
+    public string? Telefono { get; set; }
 }

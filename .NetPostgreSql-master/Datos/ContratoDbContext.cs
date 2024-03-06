@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Dato.Model;
 using Microsoft.EntityFrameworkCore;
-
-namespace Dato;
+using Datos.Models;
+namespace Datos;
 
 public partial class ContratoDbContext : DbContext
 {
@@ -45,12 +44,14 @@ public partial class ContratoDbContext : DbContext
 
         modelBuilder.Entity<Permiso>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("permiso");
+            entity.HasKey(e => e.Id).HasName("permiso_pk");
 
+            entity.ToTable("permiso");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
             entity.Property(e => e.Descripcion).HasColumnName("descripcion");
-            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .HasColumnName("nombre");
@@ -82,21 +83,28 @@ public partial class ContratoDbContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("usuario");
+            entity.HasKey(e => e.Id).HasName("usuario_pk");
 
+            entity.ToTable("usuario");
+
+            entity.HasIndex(e => e.Id, "usuario_pk_2").IsUnique();
+
+            entity.Property(e => e.Id)
+                .UseIdentityAlwaysColumn()
+                .HasColumnName("id");
             entity.Property(e => e.Clave)
                 .HasMaxLength(50)
                 .HasColumnName("clave");
             entity.Property(e => e.Correo)
                 .HasMaxLength(100)
                 .HasColumnName("correo");
-            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .HasColumnName("nombre");
             entity.Property(e => e.RolId).HasColumnName("rol_id");
+            entity.Property(e => e.Telefono)
+                .HasColumnType("character varying")
+                .HasColumnName("telefono");
         });
 
         OnModelCreatingPartial(modelBuilder);

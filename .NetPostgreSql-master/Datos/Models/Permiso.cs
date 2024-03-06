@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dato.Model;
+namespace Datos.Models;
 
 public partial class Permiso
 {

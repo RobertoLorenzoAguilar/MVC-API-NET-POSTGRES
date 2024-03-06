@@ -1,10 +1,5 @@
-﻿using Dato;
-using Dato.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Datos;
+using Datos.Models;
 
 namespace Negocio.Interfaces
 {
@@ -14,7 +9,7 @@ namespace Negocio.Interfaces
 
         Usuario GetUsuarioByCredenciales(string correo, string clave);
 
-        List<string> GetPermisosModuloByRol(int IdRol);        
+        List<string> GetPermisosModuloByRol(int? IdRol);        
 
     }
 }

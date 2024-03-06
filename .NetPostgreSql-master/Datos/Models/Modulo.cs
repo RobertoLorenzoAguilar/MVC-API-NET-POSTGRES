@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dato.Model;
+namespace Datos.Models;
 
-public partial class Rol
+public partial class Modulo
 {
     public int Id { get; set; }
 

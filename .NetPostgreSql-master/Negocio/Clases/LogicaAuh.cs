@@ -1,5 +1,5 @@
-﻿using Dato;
-using Dato.Model;
+﻿using Datos;
+using Datos.Models;
 using Microsoft.EntityFrameworkCore;
 using Negocio.Interfaces;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -28,7 +28,7 @@ namespace Negocio.Clases
         }
 
 
-        public List<string> GetPermisosModuloByRol(int idRol)
+        public List<string> GetPermisosModuloByRol(int? idRol)
         {
             //codigo en entity
             //select permiso.nombre, modulo.nombre from rol_permiso_modulo

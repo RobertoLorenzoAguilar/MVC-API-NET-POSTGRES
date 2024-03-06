@@ -1,9 +1,4 @@
-﻿using Dato.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Datos.Models;
 using static Negocios.Clases.LogicaPermiso;
 
 namespace Negocios.Interfaces

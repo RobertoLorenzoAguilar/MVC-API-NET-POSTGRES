@@ -1,5 +1,5 @@
-﻿using Dato;
-using Dato.Model;
+﻿using Datos;
+using Datos.Models;
 using Negocio.Interfaces;
 
 namespace Negocio.Clases

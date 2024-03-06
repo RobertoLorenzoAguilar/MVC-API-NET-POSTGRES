@@ -1,4 +1,4 @@
-﻿using Dato.Model;
+﻿using Datos.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Negocios.Interfaces;

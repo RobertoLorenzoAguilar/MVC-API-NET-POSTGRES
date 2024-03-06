@@ -1,9 +1,7 @@
-﻿using Dato;
-using Dato.Model;
+﻿using Datos.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Negocio.Interfaces;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using Negocios.Interfaces;
 
 namespace WebContratos.Controllers
 {
@@ -43,5 +41,15 @@ namespace WebContratos.Controllers
             var resultado = _usuario.GuardarUsuario(usuario);
             return Ok(new { resultado });
         }
+
+        [HttpDelete]
+        [Route("usuarios/eliminar")]
+        [Authorize("eliminar:usuarios")]
+        public IActionResult EliminarUsuario([FromBody] Usuario usuario)
+        {
+            //var Modulos = _usuario.GetModulos();
+            var resultado = _usuario.EliminarUsuario(usuario.Id);
+            return Ok(new { resultado });
+        }        
     }
 }

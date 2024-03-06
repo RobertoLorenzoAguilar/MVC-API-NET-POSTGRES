@@ -2,11 +2,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Dato;
+using Datos;
 using Negocio.Clases;
 using Negocio.Interfaces;
 using Negocios.Interfaces;
 using Negocios.Clases;
+using Datos.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,7 @@ builder.Services.AddScoped<IModulo, LogicaModulo>();
 builder.Services.AddScoped<IAuh, LogicaAuh>();
 builder.Services.AddScoped<IUsuario, LogicaUsuario>();
 builder.Services.AddScoped<IPermiso, LogicaPermiso>();
+builder.Services.AddScoped<IRol, LogicaRol>();
 
 
 //agregar en la documentación la parte 
@@ -55,7 +57,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));
     options.AddPolicy("leer:usuarios", policy => policy.RequireClaim("scope", "leer:usuarios"));
     options.AddPolicy("leer:usuariosbyid", policy => policy.RequireClaim("scope", "leer:usuariosbyid"));
-    options.AddPolicy("agregar:usuarios", policy => policy.RequireClaim("scope", "agregar:usuarios"));    
+    options.AddPolicy("agregar:usuarios", policy => policy.RequireClaim("scope", "agregar:usuarios"));
+    options.AddPolicy("leer:roles", policy => policy.RequireClaim("scope", "leer:roles"));
+    options.AddPolicy("eliminar:usuarios", policy => policy.RequireClaim("scope", "eliminar:usuarios"));
 });
 // final JWT
 
