@@ -10,4 +10,6 @@ public partial class Permiso
     public string Nombre { get; set; } = null!;
 
     public string? Descripcion { get; set; }
+
+    public virtual ICollection<RolPermisoModulo> RolPermisoModulos { get; set; } = new List<RolPermisoModulo>();
 }

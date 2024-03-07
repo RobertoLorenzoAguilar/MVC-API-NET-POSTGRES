@@ -730,7 +730,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dev\\.nuget\\packages\\": {}
+    "C:\\Users\\R\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -738,11 +738,11 @@
       "projectUniqueName": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Negocios.csproj",
       "projectName": "Negocios",
       "projectPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\Negocios.csproj",
-      "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\R\\.nuget\\packages\\",
       "outputPath": "C:\\proyecto\\.NetPostgreSql\\.NetPostgreSql-master\\Negocio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\R\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

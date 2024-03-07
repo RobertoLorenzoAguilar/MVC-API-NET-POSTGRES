@@ -1,8 +1,5 @@
-﻿using Datos;
-using Datos.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Datos.Models;
 using Negocio.Interfaces;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Negocio.Clases
 {
@@ -23,6 +20,8 @@ namespace Negocio.Clases
 
         public Usuario GetUsuarioByCredenciales(string correo, string clave)
         {
+
+            var test = db.Usuarios.ToList();
             return db.Usuarios.Where(obj => obj.Correo == correo && obj.Clave == clave).FirstOrDefault();
 
         }

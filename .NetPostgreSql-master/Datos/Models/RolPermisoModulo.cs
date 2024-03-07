@@ -12,4 +12,10 @@ public partial class RolPermisoModulo
     public int PermisoId { get; set; }
 
     public int ModuloId { get; set; }
+
+    public virtual Modulo Modulo { get; set; } = null!;
+
+    public virtual Permiso Permiso { get; set; } = null!;
+
+    public virtual Rol Rol { get; set; } = null!;
 }

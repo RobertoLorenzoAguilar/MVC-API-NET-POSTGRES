@@ -22,16 +22,7 @@ namespace WebContratos.Controllers
             var resultado = _Rol.GetRols();
             return Ok(new { resultado });
         }
-        [HttpGet]
-        [Route("Rols/GetRolsId")]
-        [Authorize("leer:Rolsbyid")] // Se requiere el ámbito "read:Rols"
-        public IActionResult GetRolsId()
-        {
-            var resultado = _Rol.GetRols();
-            return Ok(new { resultado });
-        }
-
-
+        
         [HttpPost]
         [Route("Rols/AgregarRol")]
         [Authorize("agregar:Rols")]

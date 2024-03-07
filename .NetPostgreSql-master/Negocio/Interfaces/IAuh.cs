@@ -1,5 +1,4 @@
-﻿using Datos;
-using Datos.Models;
+﻿using Datos.Models;
 
 namespace Negocio.Interfaces
 {

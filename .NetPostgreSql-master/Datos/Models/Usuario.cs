@@ -15,5 +15,5 @@ public partial class Usuario
 
     public int? RolId { get; set; }
 
-    public string? Telefono { get; set; }
+    public virtual Rol? Rol { get; set; }
 }

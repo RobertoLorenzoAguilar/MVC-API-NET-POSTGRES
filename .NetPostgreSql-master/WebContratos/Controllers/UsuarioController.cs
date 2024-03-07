@@ -22,15 +22,6 @@ namespace WebContratos.Controllers
             var resultado = _usuario.GetUsuarios();
             return Ok(new { resultado });
         }
-        [HttpGet]
-        [Route("usuarios/GetUsuariosId")]
-        [Authorize("leer:usuariosbyid")] // Se requiere el ámbito "read:usuarios"
-        public IActionResult GetUsuariosId()
-        {
-            var resultado = _usuario.GetUsuarios();
-            return Ok(new { resultado });
-        }
-
 
         [HttpPost]
         [Route("usuarios/AgregarUsuario")]

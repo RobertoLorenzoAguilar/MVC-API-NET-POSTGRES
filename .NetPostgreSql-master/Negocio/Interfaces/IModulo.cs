@@ -1,6 +1,4 @@
-﻿using Datos;
-using Datos.Models;
-using Microsoft.Extensions.Primitives;
+﻿using Datos.Models;
 
 namespace Negocio.Interfaces
 {

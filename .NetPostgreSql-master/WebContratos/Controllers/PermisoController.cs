@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Negocios.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
-using static Negocios.Clases.LogicaPermiso;
 
 namespace WebContratos.Controllers
 {

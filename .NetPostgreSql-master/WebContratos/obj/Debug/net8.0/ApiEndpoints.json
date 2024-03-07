@@ -103,16 +103,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebContratos.Controllers.RolController",
-    "Method": "GetRolsId",
-    "RelativePath": "Rols/GetRolsId",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "WebContratos.Controllers.UsuarioController",
     "Method": "GetUsuarios",
     "RelativePath": "usuarios",
@@ -152,16 +142,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebContratos.Controllers.UsuarioController",
-    "Method": "GetUsuariosId",
-    "RelativePath": "usuarios/GetUsuariosId",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]

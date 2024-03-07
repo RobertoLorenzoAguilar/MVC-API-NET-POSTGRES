@@ -1,7 +1,5 @@
 ﻿using Datos.Models;
-using Datos;
 using Negocios.Interfaces;
-
 
 namespace Negocio.Clases
 {
