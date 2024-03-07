@@ -50,16 +50,27 @@ builder.Services.AddAuthentication(auth =>
 // Definir políticas de autorización basadas en ámbitos
 builder.Services.AddAuthorization(options =>
 {
+    #region Modulo modulos
     options.AddPolicy("agregar:modulos", policy => policy.RequireClaim("scope", "agregar:modulos"));
-    options.AddPolicy("leer:modulos", policy => policy.RequireClaim("scope", "leer:modulos"));    
+    options.AddPolicy("leer:modulos", policy => policy.RequireClaim("scope", "leer:modulos"));
     options.AddPolicy("eliminar:modulos", policy => policy.RequireClaim("scope", "eliminar:modulos"));
     options.AddPolicy("actualizar:modulos", policy => policy.RequireClaim("scope", "actualizar:modulos"));
+    #endregion Modulo modulos
+
+    #region Modulo permisos
     options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));
-    options.AddPolicy("leer:usuarios", policy => policy.RequireClaim("scope", "leer:usuarios"));
-    //options.AddPolicy("leer:usuariosbyid", policy => policy.RequireClaim("scope", "leer:usuariosbyid"));
-    options.AddPolicy("agregar:usuarios", policy => policy.RequireClaim("scope", "agregar:usuarios"));
+    #endregion Modulo permisos
+
+    #region Modulo usuarios
     options.AddPolicy("leer:roles", policy => policy.RequireClaim("scope", "leer:roles"));
+    #endregion Modulo usuarios
+
+    #region Modulo usuarios
+    options.AddPolicy("leer:usuarios", policy => policy.RequireClaim("scope", "leer:usuarios"));
+    options.AddPolicy("agregar:usuarios", policy => policy.RequireClaim("scope", "agregar:usuarios"));
     options.AddPolicy("eliminar:usuarios", policy => policy.RequireClaim("scope", "eliminar:usuarios"));
+    options.AddPolicy("actualizar:usuarios", policy => policy.RequireClaim("scope", "actualizar:usuarios"));
+    #endregion Modulo usuarios
 });
 // final JWT
 

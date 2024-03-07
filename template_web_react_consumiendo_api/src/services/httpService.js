@@ -106,7 +106,38 @@ const HttpService = {
       response: serverResponse || null,
     };
   },
+  put: async (url, data, auth = true, type = 1, withHandlerError = true) => {
+    let token = null;
+    if (auth) token = await getCurrentToken();
+    const response = await fetch(baseUrl + baseModule + url, {
+      method: "PUT",
+      headers: auth ? getHeaders(token) : getHeadersWithoutToken(),
+      body: JSON.stringify(data),
+    });
 
+    if (withHandlerError) await handleFetchErrors(response);
+
+    let serverResponse = null;
+    try {
+      if (type === 1) {
+        serverResponse = await response.json();
+      }
+      if (type === 2) {
+        serverResponse = await response.blob();
+      }
+    } catch (error) {
+      console.error("Error parsing response:", error.message);
+    }
+
+    return {
+      isError: false,
+      status: response.status,
+      errores: serverResponse?.errores || null,
+      detalle: serverResponse?.detalle || null,
+      mensaje: serverResponse?.mensaje || null,
+      response: serverResponse || null,
+    };
+  },
   postPublico: async (url, data, type = 1, withHandlerError = true) => {
     const response = await fetch(baseUrl + "/publico/" + url, {
       method: "POST",

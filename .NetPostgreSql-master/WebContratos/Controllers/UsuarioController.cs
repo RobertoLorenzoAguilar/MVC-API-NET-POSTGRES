@@ -41,6 +41,15 @@ namespace WebContratos.Controllers
             return Ok(new { resultado });
         }
 
+        [HttpPut]
+        [Route("usuarios/ActualizarUsuario")]
+        [Authorize("actualizar:usuarios")]
+        public IActionResult ActualizarUsuario([FromBody] Usuario usuario)
+        {
+            var resultado = _usuario.ActualizarUsuario(usuario);
+            return Ok(new { resultado });
+        }
+
         [HttpDelete]
         [Route("usuarios/eliminar")]
         [Authorize("eliminar:usuarios")]

@@ -53,6 +53,27 @@ namespace Negocio.Clases
                 return false; // Si ocurre un error, devolvemos false
             }
         }
+
+        public bool ActualizarUsuario(Usuario objUsuario)
+        {
+            try
+            {
+                var objUsuarioActualizar = db.Usuarios.Where(x => x.Id == objUsuario.Id).First();                
+                objUsuarioActualizar.Rol = objUsuario.Rol;
+                objUsuarioActualizar.Nombre = objUsuario.Nombre;
+                objUsuarioActualizar.Correo = objUsuario.Correo;
+                objUsuarioActualizar.Telefono = objUsuario.Telefono;
+                objUsuarioActualizar.Pwd = objUsuario.Pwd;
+                db.SaveChanges();
+                return true; // Si se guarda correctamente, devolvemos true
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción según sea necesario
+                Console.WriteLine($"Error al actualizar el usuario: {ex.Message}");
+                return false; // Si ocurre un error, devolvemos false
+            }
+        }
     }
 }
 

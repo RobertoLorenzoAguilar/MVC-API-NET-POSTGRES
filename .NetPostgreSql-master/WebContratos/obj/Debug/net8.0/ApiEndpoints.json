@@ -114,6 +114,22 @@
   },
   {
     "ContainingType": "WebContratos.Controllers.UsuarioController",
+    "Method": "ActualizarUsuario",
+    "RelativePath": "usuarios/ActualizarUsuario",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "Datos.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.UsuarioController",
     "Method": "AgregarUsuario",
     "RelativePath": "usuarios/AgregarUsuario",
     "HttpMethod": "POST",

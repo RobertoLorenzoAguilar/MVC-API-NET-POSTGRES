@@ -85,8 +85,10 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
 
       }
 
-      const res = await httpService.post(endPoint, body);
+      const res = editing ? await httpService.put('usuarios/ActualizarUsuario', body) : await httpService.post(endPoint, body);
+
       respuestas(res);
+      
       if (res?.status === 200) {
         navigate(`/administracion/usuarios`);
       }
