@@ -61,8 +61,10 @@ export function useModel({
 
   return React.useMemo(() => {
     let modelTmp = null;
-    if (model && model.resultado && model.resultado.length > 0) {
-      modelTmp = model.resultado[0];
+    // if (model && model.resultado && model.resultado.length > 0) {
+    if (model && model.resultado) {
+      // modelTmp = model.resultado[0];
+      modelTmp = model.resultado;
       if (model.detalle) modelTmp.detalleExtra = model.detalle;
     }
     let finalError = {};

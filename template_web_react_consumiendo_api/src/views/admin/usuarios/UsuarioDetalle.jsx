@@ -11,22 +11,26 @@ const UsuarioDetalle = () => {
 
   const [request, setRequest] = useState({});
   const [guardando, setGuardando] = useState(false);
-
+ 
   const requestParams = React.useMemo(
-    () => ({
-      req: "POST",
+    () => ({      
       name: endPoint,      
       id: id
-    }),
+    }    
+    ),
     [id]
   );
   const { model, modelLoading } = useModel(request);
+
+
   useEffect(() => {
     if (editing) {
       setRequest(requestParams);
       return () => setRequest({});
     }
   }, [editing, requestParams]);
+
+  
   return (
     <DefaultLayout
       viewLoading={{

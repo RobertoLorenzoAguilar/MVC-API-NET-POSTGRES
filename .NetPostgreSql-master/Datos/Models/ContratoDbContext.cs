@@ -114,6 +114,9 @@ public partial class ContratoDbContext : DbContext
             entity.Property(e => e.Pwd)
                 .HasMaxLength(50)
                 .HasColumnName("clave");
+            entity.Property(e => e.Telefono)
+                .HasMaxLength(50)
+                .HasColumnName("telefono");
             entity.Property(e => e.Correo)
                 .HasMaxLength(100)
                 .HasColumnName("correo");

@@ -20,7 +20,7 @@ SET row_security = off;
 -- Name: contrato_db; Type: DATABASE; Schema: -; Owner: robert
 --
 
-CREATE DATABASE contrato_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Spanish_Spain.1252';
+-- CREATE DATABASE contrato_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Spanish_Spain.1252';
 
 
 ALTER DATABASE contrato_db OWNER TO robert;

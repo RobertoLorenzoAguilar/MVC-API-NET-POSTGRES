@@ -145,7 +145,7 @@ const modelParams = {
               },
             ]}
           >
-            <Input autocomplete="one-time-code" />
+            <Input autoComplete="one-time-code" />
           </Form.Item>
         </Col>        
         <Col span={24} md={12}>
@@ -154,7 +154,7 @@ const modelParams = {
             name="correo"
             rules={[{ required: true, message: "Por favor escriba su correo" }]}
           >
-            <Input autocomplete="one-time-code" disabled={editing} />
+            <Input autoComplete="one-time-code" disabled={editing} />
           </Form.Item>
         </Col>
         <Col span={24} md={12}>
@@ -206,7 +206,7 @@ const modelParams = {
               }),
             ]}
           >
-            <Input autocomplete="one-time-code" maxLength={10} />
+            <Input autoComplete="one-time-code" maxLength={10} />
           </Form.Item>
         </Col>
       </Row>
@@ -227,7 +227,7 @@ const modelParams = {
             >
               <Input
                 type="password"
-                autocomplete="one-time-code"
+                autoComplete="one-time-code"
                 visibilitytoggle="false"
               />
             </Form.Item>
@@ -247,7 +247,7 @@ const modelParams = {
             >
               <Input
                 type="password"
-                autocomplete="one-time-code"
+                autoComplete="one-time-code"
                 visibilitytoggle="false"
               />
             </Form.Item>
@@ -274,7 +274,7 @@ const modelParams = {
             <Col span={24} md={12}>
               <Form.Item label="Contraseña" name="clave1">
                 <Input.Password
-                  autocomplete="one-time-code"
+                  autoComplete="one-time-code"
                   visibilitytoggle="false"
                 />
               </Form.Item>
@@ -287,7 +287,7 @@ const modelParams = {
             >
               <Form.Item label="Confirmar Contraseña" name="clave">
                 <Input.Password
-                  autocomplete="one-time-code"
+                  autoComplete="one-time-code"
                   visibilitytoggle="false"
                 />
               </Form.Item>

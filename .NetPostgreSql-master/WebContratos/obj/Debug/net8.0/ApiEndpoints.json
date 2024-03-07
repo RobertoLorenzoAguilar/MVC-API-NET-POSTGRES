@@ -130,6 +130,22 @@
   },
   {
     "ContainingType": "WebContratos.Controllers.UsuarioController",
+    "Method": "AgregarUsuario",
+    "RelativePath": "usuarios/AgregarUsuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.UsuarioController",
     "Method": "EliminarUsuario",
     "RelativePath": "usuarios/eliminar",
     "HttpMethod": "DELETE",

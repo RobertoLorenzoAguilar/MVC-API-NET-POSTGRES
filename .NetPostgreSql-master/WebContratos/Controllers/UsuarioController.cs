@@ -28,8 +28,16 @@ namespace WebContratos.Controllers
         [Authorize("agregar:usuarios")]
         public IActionResult AgregarUsuario([FromBody] Usuario usuario)
         {
-            //var Modulos = _usuario.GetModulos();
             var resultado = _usuario.GuardarUsuario(usuario);
+            return Ok(new { resultado });
+        }
+
+        [HttpGet]
+        [Route("usuarios/AgregarUsuario")]
+        [Authorize("agregar:usuarios")]
+        public IActionResult AgregarUsuario(int id)
+        {
+            var resultado = _usuario.GetUsuarioById(id);
             return Ok(new { resultado });
         }
 
@@ -41,6 +49,6 @@ namespace WebContratos.Controllers
             //var Modulos = _usuario.GetModulos();
             var resultado = _usuario.EliminarUsuario(usuario.Id);
             return Ok(new { resultado });
-        }        
+        }
     }
 }
