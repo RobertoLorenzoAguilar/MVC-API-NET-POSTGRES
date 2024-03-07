@@ -21,7 +21,7 @@ namespace WebContratos.Controllers
         public IActionResult GetPermisosByRol()
         {
             
-            var token = TokenManager.GetToken();
+            var token = TokenManager.GetToken(); //validacion para cuando el token llega vacio
 
             // Deserializar el JSON en un objeto TokenData
             // Decodificar el token JWT
