@@ -22,7 +22,7 @@ namespace Negocio.Clases
         {
 
             var test = db.Usuarios.ToList();
-            return db.Usuarios.Where(obj => obj.Correo == correo && obj.Clave == clave).FirstOrDefault();
+            return db.Usuarios.Where(obj => obj.Correo == correo && obj.Pwd == clave).FirstOrDefault();
 
         }
 

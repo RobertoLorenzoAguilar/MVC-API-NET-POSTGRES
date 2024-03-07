@@ -1,35 +1,35 @@
-import React, { useCallback, useEffect, useState, useMemo } from "react";
-import {
-  Select as AntdSelect,
+import React, { useEffect, useState } from "react";
+import {  
   Form,
   Row,
   Col,
   Input,
   Button,
   message,
-  Divider,
-  Typography,
-  notification,
-  Tree,
+  Divider,  
+  notification,  
 } from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 import httpService from "../../../services/httpService";
 import { respuestas } from "../../../utilities";
 import { useNavigate } from "react-router-dom";
-import { useAuth, } from "../../../hooks";
-import { Select } from '../../../components';
+import { useAuth} from "../../../hooks";
+import { Select } from "../../../components";
 
-const { Option } = AntdSelect;
 
 const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
   const [form] = Form.useForm();
-  const navigate = useNavigate();
-
+  const navigate = useNavigate();  
   const { user } = useAuth();
 
   //Estados
   const [saveLoading, setSaveLoading] = useState(false);
+  
 
+  //Permisos
+  const [checkedList, setCheckedList] = useState([]);
+
+  
   const onFinish = async (values) => {
     try {
       const { clave1, clave, rol } = values;
@@ -37,7 +37,7 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
       setSaveLoading(true);
       setGuardando(true);
       let body = {
-        ...values
+        ...values        
       };
 
       if (!editing) {
@@ -53,6 +53,36 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
           });
           return;
         }
+
+        body.pwd = clave1 ? clave1 : "";
+
+        delete body.clave1;
+        delete body.clave;
+        
+      } else {
+        if (clave1 && clave) {
+          if (clave1 !== clave) {
+            message.error("Las contraseñas no coinciden.");
+            return;
+          }
+        }
+
+        if (user?.rol !== "admin" && rol === "admin") {
+          notification.info({
+            message: "Atención",
+            description: "No puede asignar el rol de Super Administrador",
+          });
+          return;
+        }
+
+        body = {
+          ...values,
+          id: id ? id : "",
+          pwd: clave1 ? clave1 : ""          
+        };
+        delete body.clave1;
+        delete body.clave;
+
       }
 
       const res = await httpService.post(endPoint, body);
@@ -84,15 +114,16 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
         clave: "",
         unidadesAdministrativas: model?.unidadAdministrativaUsuarios,
       });
-      // setCheckedList(model?.permisos?.map((i) => i));
+      setCheckedList(model?.permisos?.map((i) => i));
     }
   }, [editing, form, model]);
 
-  const modelParams = {
+const modelParams = {
     roles: {
       name: 'rol'
     },
   };
+
 
   return (
     <Form
@@ -114,30 +145,16 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
               },
             ]}
           >
-            {/* <Input autocomplete="one-time-code" /> */}
-            <Input />
-          </Form.Item>
-        </Col>
-        {/* <Col span={24} md={12}>
-          <Form.Item
-            name="usuario"
-            label="Usuario"
-            rules={[
-              { required: true, message: "Por favor ingresar el usuario" },
-            ]}
-          >
             <Input autocomplete="one-time-code" />
           </Form.Item>
-        </Col> */}
+        </Col>        
         <Col span={24} md={12}>
           <Form.Item
             label="Correo Electronico"
             name="correo"
             rules={[{ required: true, message: "Por favor escriba su correo" }]}
           >
-            {/* <Input autocomplete="one-time-code" disabled={editing} /> */}
-            <Input />
-
+            <Input autocomplete="one-time-code" disabled={editing} />
           </Form.Item>
         </Col>
         <Col span={24} md={12}>
@@ -189,12 +206,11 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
               }),
             ]}
           >
-            {/* <Input autocomplete="one-time-code" maxLength={10} /> */}
-            <Input maxLength={10} />
+            <Input autocomplete="one-time-code" maxLength={10} />
           </Form.Item>
         </Col>
       </Row>
-      {/* {!editing && (
+      {!editing && (
         <Row gutter={[16, 0]}>
           <Col
             xs={{ span: 24 }}
@@ -211,7 +227,7 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
             >
               <Input
                 type="password"
-                // autocomplete="one-time-code"
+                autocomplete="one-time-code"
                 visibilitytoggle="false"
               />
             </Form.Item>
@@ -231,14 +247,14 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
             >
               <Input
                 type="password"
-                // autocomplete="one-time-code"
+                autocomplete="one-time-code"
                 visibilitytoggle="false"
               />
             </Form.Item>
           </Col>
         </Row>
-      )} */}
-      <Divider />
+      )}
+      <Divider />     
 
       {editing && (
         <>
@@ -254,24 +270,11 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
             Si no desea cambiar la contraseña, deje los campos en blanco.
           </p>
 
-          <Row gutter={[16, 0]}>
-            {/* <Col
-              xs={{ span: 24 }}
-              sm={{ span: 24 }}
-              md={{ span: 12 }}
-              lg={{ span: 12 }}
-            >
-              <Form.Item label="Contraseña Actual" name="claveActual">
-                <Input.Password
-                  autocomplete="one-time-code"
-                  visibilitytoggle="false"
-                />
-              </Form.Item>
-            </Col> */}
+          <Row gutter={[16, 0]}>            
             <Col span={24} md={12}>
               <Form.Item label="Contraseña" name="clave1">
                 <Input.Password
-                  // autocomplete="one-time-code"
+                  autocomplete="one-time-code"
                   visibilitytoggle="false"
                 />
               </Form.Item>
@@ -284,7 +287,7 @@ const Formulario = ({ setGuardando, endPoint, model, editing, id }) => {
             >
               <Form.Item label="Confirmar Contraseña" name="clave">
                 <Input.Password
-                  // autocomplete="one-time-code"
+                  autocomplete="one-time-code"
                   visibilitytoggle="false"
                 />
               </Form.Item>

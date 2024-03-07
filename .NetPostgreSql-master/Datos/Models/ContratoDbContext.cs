@@ -111,7 +111,7 @@ public partial class ContratoDbContext : DbContext
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("id");
-            entity.Property(e => e.Clave)
+            entity.Property(e => e.Pwd)
                 .HasMaxLength(50)
                 .HasColumnName("clave");
             entity.Property(e => e.Correo)

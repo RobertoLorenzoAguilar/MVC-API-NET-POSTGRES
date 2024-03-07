@@ -1,0 +1,54 @@
+.title-container{
+	margin-bottom: 20px;
+}
+
+.table-tittle{
+	border-bottom: 1px solid #001529;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.tittle{
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.info-container{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	width: 80%;
+}
+
+.info-table{
+	width: 100%;
+}
+
+.proyecto-etapa{
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.actividad-usuario{
+	font-size: 20px;
+}
+
+.task-table{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.task-table th{
+	background-color: #1677ff;
+	border: 1px solid #001529;
+	color: white;
+}
+
+.task-table td{
+	border: 1px solid #001529;
+	margin: 5px;
+	padding: 5px;
+}
