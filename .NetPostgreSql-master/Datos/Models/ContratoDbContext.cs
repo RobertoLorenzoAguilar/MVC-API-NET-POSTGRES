@@ -39,6 +39,7 @@ public partial class ContratoDbContext : DbContext
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("id");
+            entity.Property(e => e.Eliminado).HasColumnName("eliminado");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .HasColumnName("nombre");
@@ -111,19 +112,19 @@ public partial class ContratoDbContext : DbContext
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("id");
-            entity.Property(e => e.Pwd)
-                .HasMaxLength(50)
-                .HasColumnName("clave");
-            entity.Property(e => e.Telefono)
-                .HasMaxLength(50)
-                .HasColumnName("telefono");
             entity.Property(e => e.Correo)
                 .HasMaxLength(100)
                 .HasColumnName("correo");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .HasColumnName("nombre");
+            entity.Property(e => e.Pwd)
+                .HasMaxLength(50)
+                .HasColumnName("pwd");
             entity.Property(e => e.RolId).HasColumnName("rol_id");
+            entity.Property(e => e.Telefono)
+                .HasColumnType("character varying")
+                .HasColumnName("telefono");
 
             entity.HasOne(d => d.Rol).WithMany(p => p.Usuarios)
                 .HasForeignKey(d => d.RolId)

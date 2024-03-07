@@ -8,6 +8,7 @@ using Negocio.Interfaces;
 using Negocios.Interfaces;
 using Negocios.Clases;
 using Datos.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,7 @@ builder.Services.AddAuthentication(auth =>
 // Definir políticas de autorización basadas en ámbitos
 builder.Services.AddAuthorization(options =>
 {
+    //Ordenar alfabeticamente
     #region Modulo modulos
     options.AddPolicy("agregar:modulos", policy => policy.RequireClaim("scope", "agregar:modulos"));
     options.AddPolicy("leer:modulos", policy => policy.RequireClaim("scope", "leer:modulos"));
@@ -57,8 +59,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("actualizar:modulos", policy => policy.RequireClaim("scope", "actualizar:modulos"));
     #endregion Modulo modulos
 
-    #region Modulo permisos
+    #region Modulo permisos  
     options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));
+    options.AddPolicy("eliminar:modulos", policy => policy.RequireClaim("scope", "eliminar:modulos"));
     #endregion Modulo permisos
 
     #region Modulo usuarios

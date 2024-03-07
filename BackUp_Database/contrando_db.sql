@@ -16,28 +16,6 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
---
--- Name: contrato_db; Type: DATABASE; Schema: -; Owner: robert
---
-
--- CREATE DATABASE contrato_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Spanish_Spain.1252';
-
-
-ALTER DATABASE contrato_db OWNER TO robert;
-
-\connect contrato_db
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -48,7 +26,8 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.modulo (
     id integer NOT NULL,
-    nombre character varying(100) NOT NULL
+    nombre character varying(100) NOT NULL,
+    eliminado integer
 );
 
 
@@ -157,8 +136,9 @@ CREATE TABLE public.usuario (
     id integer NOT NULL,
     nombre character varying(100) NOT NULL,
     correo character varying(100) NOT NULL,
-    clave character varying(50),
-    rol_id integer
+    pwd character varying(50),
+    rol_id integer,
+    telefono character varying
 );
 
 
@@ -182,11 +162,11 @@ ALTER TABLE public.usuario ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 -- Data for Name: modulo; Type: TABLE DATA; Schema: public; Owner: robert
 --
 
-COPY public.modulo (id, nombre) FROM stdin;
-1	modulos
-2	permisos
-3	usuarios
-4	roles
+COPY public.modulo (id, nombre, eliminado) FROM stdin;
+3	usuarios	1
+2	permisos	1
+4	roles	1
+1	modulos	0
 \.
 
 
@@ -198,7 +178,7 @@ COPY public.permiso (id, nombre, descripcion) FROM stdin;
 1	leer	leer modulo
 2	agregar	agregar modulo
 3	eliminar	eliminar modulo
-4	editar	editar modulo
+4	actualizar	actualizar modulo
 \.
 
 
@@ -226,6 +206,7 @@ COPY public.rol_permiso_modulo (id, rol_id, permiso_id, modulo_id) FROM stdin;
 8	1	2	3
 9	1	3	3
 10	1	1	4
+11	1	4	3
 \.
 
 
@@ -233,9 +214,9 @@ COPY public.rol_permiso_modulo (id, rol_id, permiso_id, modulo_id) FROM stdin;
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: robert
 --
 
-COPY public.usuario (id, nombre, correo, clave, rol_id) FROM stdin;
-3	roberto	roberto@gmail.com	root	1
-10	lorenzo	lorenzo@gmail.com	\N	1
+COPY public.usuario (id, nombre, correo, pwd, rol_id, telefono) FROM stdin;
+3	roberto	roberto@gmail.com	root	1	1234567895
+11	saguilar	santiago@gmail.com		1	2222222222
 \.
 
 
@@ -264,14 +245,14 @@ SELECT pg_catalog.setval('public.rol_id_seq', 1, true);
 -- Name: rol_permiso_modulo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: robert
 --
 
-SELECT pg_catalog.setval('public.rol_permiso_modulo_id_seq', 10, true);
+SELECT pg_catalog.setval('public.rol_permiso_modulo_id_seq', 11, true);
 
 
 --
 -- Name: usuario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: robert
 --
 
-SELECT pg_catalog.setval('public.usuario_id_seq', 10, true);
+SELECT pg_catalog.setval('public.usuario_id_seq', 17, true);
 
 
 --

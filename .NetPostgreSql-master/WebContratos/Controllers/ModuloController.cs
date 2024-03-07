@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Datos.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Negocio.Interfaces;
@@ -35,10 +36,10 @@ namespace WebContratos.Controllers
         [HttpDelete]
         [Route("modulos/eliminar")]
         [Authorize("eliminar:modulos")] 
-        public IActionResult EliminarModulo(int IdModulo)
+        public IActionResult EliminarModulo([FromBody] Modulo modulo)
         {
-            _modulo.EliminarModulos(IdModulo);
-            return Ok();
+            var resultado = _modulo.EliminarModulos(modulo.Id);            
+            return Ok(new { resultado });
         }
 
         [HttpPut]

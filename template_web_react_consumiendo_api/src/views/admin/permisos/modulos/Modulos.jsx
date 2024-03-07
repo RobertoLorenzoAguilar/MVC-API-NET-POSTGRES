@@ -34,36 +34,33 @@ const Modulos = () => {
   ];
 
   const columns = [
-    // {
-    //   title: "Acciones",
-    //   key: "id",
-    //   dataIndex: "id",
-    //   width: 100,
-    //   align: "center",
-    //   render: (_, item) => (
-    //     <ActionsButton
-    //       options={[
-    //         {
-    //           name: "Editar",
-    //           onClick: () => {
-    //             setOpen(true);
-    //             setModelValue(item);
-    //             form.setFieldsValue({ ...item });
-    //           },
-    //         },
-    //         {
-    //           name: "Eliminar",
-    //           onClick: () => {
-    //             eliminarRegistro(item?.nombre, item?.id, endPoint, () => {
-    //               tablaRef?.current?.refresh();
-    //             });
-    //           },
-    //           danger: true,
-    //         },
-    //       ]}
-    //     />
-    //   ),
-    // },
+    {
+      title: "Acciones",
+      key: "id",
+      dataIndex: "id",
+      width: 100,
+      align: "center",
+      render: (_, item) => (
+        <ActionsButton
+          data={[
+            {
+              label: "Editar",
+              onClick: () =>
+                navigate(`/administracion/usuarios/editar?id=${item.id}`),
+            },
+            {
+              label: "Eliminar",
+              onClick: () => {
+                eliminarRegistro(item?.nombre, item?.id, "modulos/eliminar", () =>
+                  tablaRef?.current?.refresh()
+                );
+              },
+              danger: true,
+            },
+          ]}
+        />
+      ),
+    },
     {
       title: "Clave",
       key: "id",

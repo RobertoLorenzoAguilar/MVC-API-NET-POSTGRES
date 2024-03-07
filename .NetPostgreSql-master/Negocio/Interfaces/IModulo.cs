@@ -5,6 +5,6 @@ namespace Negocio.Interfaces
     public interface IModulo
     {
         List<Modulo> GetModulos();
-        void EliminarModulos(int IdModulo);
+        bool EliminarModulos(int IdModulo);
     }
 }

@@ -12,10 +12,10 @@ public partial class Usuario
     public string Correo { get; set; } = null!;
 
     public string? Pwd { get; set; }
-    
-    public string? Telefono { get; set; }
 
     public int? RolId { get; set; }
+
+    public string? Telefono { get; set; }
 
     public virtual Rol? Rol { get; set; }
 }

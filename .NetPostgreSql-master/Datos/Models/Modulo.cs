@@ -9,5 +9,7 @@ public partial class Modulo
 
     public string Nombre { get; set; } = null!;
 
+    public int? Eliminado { get; set; }
+
     public virtual ICollection<RolPermisoModulo> RolPermisoModulos { get; set; } = new List<RolPermisoModulo>();
 }

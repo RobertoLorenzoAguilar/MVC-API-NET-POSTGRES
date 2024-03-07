@@ -1,5 +1,6 @@
 ﻿using Datos.Models;
 using Negocio.Interfaces;
+using Negocios.Interfaces;
 
 namespace Negocio.Clases
 {
@@ -15,15 +16,25 @@ namespace Negocio.Clases
 
         public List<Modulo> GetModulos()
         {
-            return db.Modulos.ToList();
+            return db.Modulos.Where(x=> x.Eliminado == 1).ToList();
 
         }
 
-        public void EliminarModulos(int IdModulo)
+        public bool EliminarModulos(int IdModulo)
         {
-            Modulo obj = db.Modulos.Where(x => x.Id == IdModulo).First();
-            db.Modulos.Remove(obj);
-            var objEliminado = db.SaveChanges();
+            try
+            {
+                var objModulo = db.Modulos.Where(x => x.Id == IdModulo).First();
+                objModulo.Eliminado = 0;  //eliminado logico                
+                db.SaveChanges();
+                return true; // Si se guarda correctamente, devolvemos true
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción según sea necesario
+                Console.WriteLine($"Error al eliminar el modulo: {ex.Message}");
+                return false; // Si ocurre un error, devolvemos false
+            }
         }
 
 
