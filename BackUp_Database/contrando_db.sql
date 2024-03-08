@@ -16,28 +16,6 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
---
--- Name: contrato_db; Type: DATABASE; Schema: -; Owner: robert
---
-
-CREATE DATABASE contrato_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Spanish_Spain.1252';
-
-
-ALTER DATABASE contrato_db OWNER TO robert;
-
-\connect contrato_db
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -202,7 +180,8 @@ COPY public.modulo (id, nombre, eliminado) FROM stdin;
 15	OTRO P2	0
 17	nuevo	0
 4	roles	1
-18	nuevo	1
+18	nuevo	0
+19	test	1
 \.
 
 
@@ -224,6 +203,7 @@ COPY public.permiso (id, nombre, descripcion) FROM stdin;
 
 COPY public.rol (id, nombre) FROM stdin;
 1	administrador
+2	ordinario
 \.
 
 
@@ -232,19 +212,32 @@ COPY public.rol (id, nombre) FROM stdin;
 --
 
 COPY public.rol_permiso_modulo (id, rol_id, permiso_id, modulo_id) FROM stdin;
-1	1	1	1
-2	1	2	1
-3	1	3	1
-4	1	1	2
-5	1	2	2
-6	1	3	2
-7	1	1	3
-8	1	2	3
-9	1	3	3
-10	1	1	4
-11	1	4	3
-16	1	4	1
-18	1	2	2
+72	1	3	3
+73	1	3	2
+74	1	3	2
+75	1	3	4
+76	1	2	2
+82	1	1	2
+83	1	1	2
+87	1	2	2
+88	2	1	3
+90	1	1	3
+93	1	4	4
+30	1	1	1
+31	1	1	2
+94	1	2	2
+95	1	1	2
+96	1	2	3
+98	1	1	2
+99	1	2	3
+39	1	2	2
+100	1	2	1
+43	1	2	2
+46	1	1	2
+60	1	1	4
+62	1	2	4
+63	1	2	2
+64	1	1	2
 \.
 
 
@@ -254,7 +247,6 @@ COPY public.rol_permiso_modulo (id, rol_id, permiso_id, modulo_id) FROM stdin;
 
 COPY public.usuario (id, nombre, correo, pwd, rol_id, telefono) FROM stdin;
 3	roberto	roberto@gmail.com	root	1	1234567895
-19	prueba	roberto@gmail.com	root	1	6666666666
 \.
 
 
@@ -262,7 +254,7 @@ COPY public.usuario (id, nombre, correo, pwd, rol_id, telefono) FROM stdin;
 -- Name: modulo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: robert
 --
 
-SELECT pg_catalog.setval('public.modulo_id_seq', 18, true);
+SELECT pg_catalog.setval('public.modulo_id_seq', 19, true);
 
 
 --
@@ -276,21 +268,21 @@ SELECT pg_catalog.setval('public.permiso_id_seq', 4, true);
 -- Name: rol_id_seq; Type: SEQUENCE SET; Schema: public; Owner: robert
 --
 
-SELECT pg_catalog.setval('public.rol_id_seq', 1, true);
+SELECT pg_catalog.setval('public.rol_id_seq', 2, true);
 
 
 --
 -- Name: rol_permiso_modulo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: robert
 --
 
-SELECT pg_catalog.setval('public.rol_permiso_modulo_id_seq', 18, true);
+SELECT pg_catalog.setval('public.rol_permiso_modulo_id_seq', 100, true);
 
 
 --
 -- Name: usuario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: robert
 --
 
-SELECT pg_catalog.setval('public.usuario_id_seq', 19, true);
+SELECT pg_catalog.setval('public.usuario_id_seq', 21, true);
 
 
 --
