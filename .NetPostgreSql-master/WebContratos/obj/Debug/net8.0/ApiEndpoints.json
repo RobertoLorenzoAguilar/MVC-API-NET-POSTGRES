@@ -90,6 +90,16 @@
   },
   {
     "ContainingType": "WebContratos.Controllers.PermisoController",
+    "Method": "GetPermisosByRolUsuarioActual",
+    "RelativePath": "permisos/GetPermisosByRolUsuarioActual",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.PermisoController",
     "Method": "GetPermisosByRol",
     "RelativePath": "permisos/rol",
     "HttpMethod": "GET",
@@ -111,7 +121,7 @@
   {
     "ContainingType": "WebContratos.Controllers.RolController",
     "Method": "ActualizarRol",
-    "RelativePath": "Rols/ActualizarUsuario",
+    "RelativePath": "Rols/ActualizarRol",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

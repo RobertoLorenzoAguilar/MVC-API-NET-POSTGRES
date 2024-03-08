@@ -152,7 +152,7 @@ const dashboardRoutes = [
           {
             layout: "dashboard",
             path: "/permisos",
-            name: "Permisos",
+            name: "roles",
             icon: <LockOutlined />,
             sidebar: "single",
             ver: "MENU-VER",

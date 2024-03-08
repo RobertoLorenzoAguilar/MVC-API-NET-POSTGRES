@@ -33,7 +33,7 @@ namespace WebContratos.Controllers
         }
 
         [HttpPut]
-        [Route("Rols/ActualizarUsuario")]
+        [Route("Rols/ActualizarRol")]
         [Authorize("actualizar:roles")]
         public IActionResult ActualizarRol([FromBody] RolPermisoModulo Rol)
         {

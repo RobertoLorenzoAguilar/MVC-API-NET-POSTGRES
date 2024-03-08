@@ -72,9 +72,15 @@ const Permisos = () => {
             {
               label: "Editar",
               onClick: () => {
-                let a = _;
+                const renamedValues = {
+                  modulo: item.idModulo,
+                  permiso: item.idPermiso,
+                  rol: item.idrol                 
+                };
+                
+                let a = _;                
                 setOpen(true);
-                setModelValue(item);
+                setModelValue(renamedValues);
                 form.setFieldsValue({ ...item });
               }
             },
@@ -90,7 +96,7 @@ const Permisos = () => {
           ]}
         />
       ),
-    },
+    },    
     {
       title: "Nombre Tipo Permiso",
       key: "permiso",
@@ -121,7 +127,7 @@ const Permisos = () => {
       ),
     },
     {
-      title: "ROL",
+      title: "Tipo Usuario ROL",
       key: "rol",
       dataIndex: "rol",
       ellipsis: true,
@@ -150,35 +156,23 @@ const Permisos = () => {
   const onFinish = async (values) => {
     try {
       setSaveLoading(true);
-      let editing = false;
-      let renamedValues = "";
-      if (modelValue?.id == undefined) {
-        // Cambiar los nombres de las propiedades
-        renamedValues = {
-          descripcion: values.descripcion,
-          moduloid: values.modulo,
-          permisoid: values.permiso,
-          rolid: values.rol
-        };
-      } else {
-        editing = true;
-        renamedValues = {
-          id: modelValue.id,
-          // descripcion: modelValue.descripcion,
-          moduloid: modelValue.idModulo,
-          permisoid: modelValue.idPermiso,
-          rolid: modelValue.idrol
-        };
 
-      }
+
+      // Cambiar los nombres de las propiedades
+      const renamedValues = {
+        descripcion: values.descripcion,
+        moduloid: values.modulo,
+        permisoid: values.permiso,
+        rolid: values.rol
+      };
+
       let body = {
         ...renamedValues,
       };
 
-      const res = editing ? await HttpService.put('Rols/ActualizarRol', body) : await HttpService.post('Rols/AgregarRol', body);
+      body.claveOld = modelValue?.id;
 
-      // const res = await HttpService.post('Rols/AgregarRol', body);
-
+      const res = await HttpService.post('Rols/AgregarRol', body);
       respuestas(res);
       if (res.status === 200) {
         setOpen(false);
@@ -274,7 +268,7 @@ const Permisos = () => {
               >
 
 
-                <Form.Item name="rol" id="rolid" label="Rol">
+                <Form.Item name="rol"  label="Rol">
                   <Select
                     placeholder="Seleccione un rol"
                     allowClear={true}
@@ -319,8 +313,8 @@ const Permisos = () => {
                 </Form.Item>
               </Col>
             </Row>
-
-
+            
+            
             <Row gutter={10}>
               <Col span={24}>
                 <Form.Item name="descripcion" label="Descripción">
