@@ -22,14 +22,31 @@ namespace WebContratos.Controllers
             var resultado = _Rol.GetRols();
             return Ok(new { resultado });
         }
-        
+
         [HttpPost]
         [Route("Rols/AgregarRol")]
         [Authorize("agregar:roles")]
         public IActionResult AgregarRol([FromBody] RolPermisoModulo Rol)
         {
-            //var Modulos = _Rol.GetModulos();
             var resultado = _Rol.GuardarRol(Rol);
+            return Ok(new { resultado });
+        }
+
+        [HttpPut]
+        [Route("Rols/ActualizarUsuario")]
+        [Authorize("actualizar:roles")]
+        public IActionResult ActualizarRol([FromBody] RolPermisoModulo Rol)
+        {
+            var resultado = _Rol.ActualizarRol(Rol);
+            return Ok(new { resultado });
+        }
+
+        [HttpDelete]
+        [Route("Rols/eliminar")]
+        [Authorize("eliminar:roles")]
+        public IActionResult EliminarRol([FromBody] RolPermisoModulo Rol)
+        {
+            var resultado = _Rol.EliminarRol(Rol.Id);
             return Ok(new { resultado });
         }
     }

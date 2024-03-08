@@ -61,6 +61,36 @@ const Permisos = () => {
 
   const columns = [
     {
+      title: "Acciones",
+      key: "id",
+      dataIndex: "id",
+      width: 100,
+      align: "center",
+      render: (_, item) => (
+        <ActionsButton
+          data={[
+            {
+              label: "Editar",
+              onClick: () => {
+                setOpen(true);
+                setModelValue(item);
+                form.setFieldsValue({ ...item });
+              }
+            },
+            {
+              label: "Eliminar",
+              onClick: () => {
+                eliminarRegistro(item?.nombre, item?.id, "rols/eliminar", () =>
+                  tablaRef?.current?.refresh()
+                );
+              },
+              danger: true,
+            },
+          ]}
+        />
+      ),
+    },
+    {
       title: "Clave",
       key: "id",
       dataIndex: "id",

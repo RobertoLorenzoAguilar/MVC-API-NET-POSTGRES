@@ -54,8 +54,7 @@ namespace WebContratos.Controllers
         [Route("usuarios/eliminar")]
         [Authorize("eliminar:usuarios")]
         public IActionResult EliminarUsuario([FromBody] Usuario usuario)
-        {
-            //var Modulos = _usuario.GetModulos();
+        {            
             var resultado = _usuario.EliminarUsuario(usuario.Id);
             return Ok(new { resultado });
         }

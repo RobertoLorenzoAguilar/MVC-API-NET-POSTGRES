@@ -64,10 +64,6 @@ builder.Services.AddAuthorization(options =>
     #endregion Modulo permisos
 
     #region Modulo usuarios
-    options.AddPolicy("leer:roles", policy => policy.RequireClaim("scope", "leer:roles"));
-    #endregion Modulo usuarios
-
-    #region Modulo usuarios
     options.AddPolicy("leer:usuarios", policy => policy.RequireClaim("scope", "leer:usuarios"));
     options.AddPolicy("agregar:usuarios", policy => policy.RequireClaim("scope", "agregar:usuarios"));
     options.AddPolicy("eliminar:usuarios", policy => policy.RequireClaim("scope", "eliminar:usuarios"));
@@ -75,7 +71,10 @@ builder.Services.AddAuthorization(options =>
     #endregion Modulo usuarios
 
     #region Modulo roles    
-    options.AddPolicy("agregar:roles", policy => policy.RequireClaim("scope", "agregar:roles"));    
+    options.AddPolicy("leer:roles", policy => policy.RequireClaim("scope", "leer:roles"));
+    options.AddPolicy("agregar:roles", policy => policy.RequireClaim("scope", "agregar:roles"));
+    options.AddPolicy("eliminar:roles", policy => policy.RequireClaim("scope", "eliminar:roles"));
+    options.AddPolicy("actualizar:roles", policy => policy.RequireClaim("scope", "actualizar:roles"));
     #endregion Modulo roles
 });
 // final JWT
