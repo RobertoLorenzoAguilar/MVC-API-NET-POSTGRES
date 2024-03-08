@@ -130,7 +130,7 @@ const dashboardRoutes = [
       {
         layout: "dashboard",
         path: "/permisos",
-        name: "Permisos",
+        name: "Perfiles",
         icon: <ControlOutlined />,
         sidebar: "collapse",
         ver: "MENU-VER",

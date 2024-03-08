@@ -89,9 +89,28 @@ const Permisos = () => {
           ]}
         />
       ),
-    },    
+    },
+    // {
+    //   title: "Clave",
+    //   key: "id",
+    //   dataIndex: "id",
+    //   ellipsis: true,
+    //   render: (_, item) => (
+    //     <Link
+    //       style={{ color: "black" }}
+    //       to="#"
+    //       onClick={() => {
+    //         setOpen(true);
+    //         setModelValue(item);
+    //         form.setFieldsValue({ ...item });
+    //       }}
+    //     >
+    //       {item?.id}
+    //     </Link>
+    //   ),
+    // },
     {
-      title: "Nombre Tipo Permiso",
+      title: "Nombre",
       key: "permiso",
       dataIndex: "permiso",
       ellipsis: true,
@@ -115,17 +134,36 @@ const Permisos = () => {
       dataIndex: "modulo",
       ellipsis: true,
       render: (_, item) => (
-        item?.modulo
+        <Link
+          to="#"
+          style={{ color: "black" }}
+          onClick={() => {
+            setOpen(true);
+            setModelValue(item);
+            form.setFieldsValue({ ...item });
+          }}
+        >
+          {item?.modulo}
+        </Link>
       ),
     },
     {
       title: "ROL",
       key: "rol",
-      dataIndex: "rol",
+      dataIndex: "descripcion",
       ellipsis: true,
       render: (_, item) => (
-        item?.rol
-
+        <Link
+          style={{ color: "black" }}
+          to="#"
+          onClick={() => {
+            setOpen(true);
+            setModelValue(item);
+            form.setFieldsValue({ ...item });
+          }}
+        >
+          {item?.descripcion}
+        </Link>
       ),
     },
   ];
@@ -149,17 +187,8 @@ const Permisos = () => {
     try {
       setSaveLoading(true);
 
-
-      // Cambiar los nombres de las propiedades
-      const renamedValues = {
-        descripcion: values.descripcion,
-        moduloid: values.modulo,
-        permisoid: values.permiso,
-        rolid: values.rol
-      };
-
       let body = {
-        ...renamedValues,
+        ...values,
       };
 
       body.claveOld = modelValue?.id;
@@ -204,7 +233,7 @@ const Permisos = () => {
 
   //para asignar leer roles al Select
   const modelParamsRoles = {
-    rol: {
+    roles: {
       name: 'rol'
     },
   };
@@ -260,15 +289,15 @@ const Permisos = () => {
               >
 
 
-                <Form.Item name="rol" label="Rol">
+                <Form.Item name="descripcion" label="Rol">
                   <Select
                     placeholder="Seleccione un rol"
                     allowClear={true}
-                    modelsParams={modelParamsRoles.rol}
+                    modelsParams={modelParamsRoles.roles}
                     labelProp="nombre"
                     valueProp="id"
                     render={(_, row) => `${row.nombre}`}
-                  // render={(_, row) => `${row.id} - ${row.nombre}`}
+                    // render={(_, row) => `${row.id} - ${row.nombre}`}
                   />
 
                 </Form.Item>
@@ -280,7 +309,7 @@ const Permisos = () => {
                     labelProp="nombre"
                     valueProp="id"
                     render={(_, row) => `${row.nombre}`}
-                  // render={(_, row) => `${row.id} - ${row.nombre}`}
+                    // render={(_, row) => `${row.id} - ${row.nombre}`}
                   />
 
                 </Form.Item>
@@ -299,17 +328,22 @@ const Permisos = () => {
                     labelProp="nombre"
                     valueProp="id"
                     render={(_, row) => `${row.nombre}`}
-                  // render={(_, row) => `${row.id} - ${row.nombre}`}
+                    // render={(_, row) => `${row.id} - ${row.nombre}`}
                   />
 
                 </Form.Item>
               </Col>
             </Row>
-            
-            
-            <Row gutter={10}>
+            {/* <Row gutter={10}>
               <Col span={24}>
                 <Form.Item name="descripcion" label="Descripción">
+                  <TextArea autoComplete="off" />
+                </Form.Item>
+              </Col>
+            </Row> */}
+            <Row gutter={10}>
+              <Col span={24}>
+                <Form.Item name="descripcion" label="descripcion">
                   <TextArea autoComplete="off" />
                 </Form.Item>
               </Col>
