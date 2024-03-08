@@ -37,7 +37,13 @@
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "modulo",
+        "Type": "Datos.Models.Modulo",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -47,7 +53,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "modulo",
+        "Type": "Datos.Models.Modulo",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

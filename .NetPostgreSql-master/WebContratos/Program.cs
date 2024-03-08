@@ -60,8 +60,7 @@ builder.Services.AddAuthorization(options =>
     #endregion Modulo modulos
 
     #region Modulo permisos  
-    options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));
-    options.AddPolicy("eliminar:modulos", policy => policy.RequireClaim("scope", "eliminar:modulos"));
+    options.AddPolicy("leer:permisos", policy => policy.RequireClaim("scope", "leer:permisos"));    
     #endregion Modulo permisos
 
     #region Modulo usuarios

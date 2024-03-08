@@ -45,9 +45,12 @@ const Modulos = () => {
           data={[
             {
               label: "Editar",
-              onClick: () =>
-                navigate(`/administracion/usuarios/editar?id=${item.id}`),
-            },
+              onClick: () => {
+                setOpen(true);
+                setModelValue(item);
+                form.setFieldsValue({ ...item });
+              }
+            },          
             {
               label: "Eliminar",
               onClick: () => {
@@ -61,25 +64,25 @@ const Modulos = () => {
         />
       ),
     },
-    {
-      title: "Clave",
-      key: "id",
-      dataIndex: "id",
-      ellipsis: true,
-      render: (_, item) => (
-        <Link
-          style={{ color: "black" }}
-          to="#"
-          onClick={() => {
-            setOpen(true);
-            setModelValue(item);
-            form.setFieldsValue({ ...item });
-          }}
-        >
-          {item?.id}
-        </Link>
-      ),
-    },
+    // {
+    //   title: "Clave",
+    //   key: "id",
+    //   dataIndex: "id",
+    //   ellipsis: true,
+    //   render: (_, item) => (
+    //     <Link
+    //       style={{ color: "black" }}
+    //       to="#"
+    //       onClick={() => {
+    //         setOpen(true);
+    //         setModelValue(item);
+    //         form.setFieldsValue({ ...item });
+    //       }}
+    //     >
+    //       {item?.id}
+    //     </Link>
+    //   ),
+    // },
     {
       title: "Nombre",
       key: "nombre",
@@ -111,9 +114,13 @@ const Modulos = () => {
 
       let body = {
         ...values,
+        id: modelValue.id
       };
-
-      const res = await HttpService.post("modulo", body);
+      
+      
+      // let id =modelValue?.id;
+      const res = modelValue?.id ? await HttpService.put('modulos/actualizar', body) : await HttpService.post("modulos/agregar", body);
+      // const res = await HttpService.post("modulos/agregar", body);
       respuestas(res);
       if (res.status === 200) {
         setOpen(false);
@@ -170,7 +177,7 @@ const Modulos = () => {
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
             >
-              <Row gutter={10}>
+              {/* <Row gutter={10}>
                 <Col span={24}>
                   <Form.Item
                     name="id"
@@ -185,7 +192,7 @@ const Modulos = () => {
                     <Input autoComplete="off" />
                   </Form.Item>
                 </Col>
-              </Row>
+              </Row> */}
               <Row gutter={10}>
                 <Col span={24}>
                   <Form.Item name="nombre" label="Nombre">

@@ -7,8 +7,8 @@ namespace Negocios.Interfaces
         Usuario GetUsuarioById(int? IdUsuario);
         List<Usuario> GetUsuarios();
         bool GuardarUsuario(Usuario objUsuario);
-        public bool EliminarUsuario(int idUsuario);
-        public bool ActualizarUsuario(Usuario objUsuario);
+        bool EliminarUsuario(int idUsuario);
+        bool ActualizarUsuario(Usuario objUsuario);
 
     }
 }

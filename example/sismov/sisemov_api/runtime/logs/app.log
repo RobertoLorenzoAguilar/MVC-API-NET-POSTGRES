@@ -1,0 +1,895 @@
+2024-02-12 19:08:12 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('pgsql:host=loca...', 'db_user', 'db_pwd', NULL)
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => 08006
+    [1] => 7
+    [2] => FATAL:  la autentificación password falló para el usuario «db_user»
+)
+
+2024-02-12 19:08:11 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\honor\\AppData\\Roaming'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_3332_JCLXCVGZZLKJWLCN'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-O9KNLD9'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DataGrip' => 'C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\honor'
+    'LOCALAPPDATA' => 'C:\\Users\\honor\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-O9KNLD9'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\honor\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\Program Files\\PostgreSQL\\psqlODBC\\etc\\openssl.cnf'
+    'ORIGINAL_XDG_CURRENT_DESKTOP' => 'undefined'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\PuTTY\\;C:\\Users\\honor\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\honor\\AppData\\Roaming\\npm;C:\\Users\\honor\\AppData\\Local\\ComposerSetup\\bin;C:\\Users\\honor\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\Neovim\\bin;C:\\Program Files\\Neovim\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '1801'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Users\\honor\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-O9KNLD9'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-O9KNLD9'
+    'USERNAME' => 'honor'
+    'USERPROFILE' => 'C:\\Users\\honor'
+    'windir' => 'C:\\Windows'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.86.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-49a549f78e-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1707761291.1964
+    'REQUEST_TIME' => 1707761291
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2024-02-12 19:08:58 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('pgsql:host=loca...', 'db_user', 'db_pwd', NULL)
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => 08006
+    [1] => 7
+    [2] => FATAL:  la autentificación password falló para el usuario «db_user»
+)
+
+2024-02-12 19:08:58 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\honor\\AppData\\Roaming'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_3332_JCLXCVGZZLKJWLCN'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-O9KNLD9'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DataGrip' => 'C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\honor'
+    'LOCALAPPDATA' => 'C:\\Users\\honor\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-O9KNLD9'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\honor\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\Program Files\\PostgreSQL\\psqlODBC\\etc\\openssl.cnf'
+    'ORIGINAL_XDG_CURRENT_DESKTOP' => 'undefined'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\PuTTY\\;C:\\Users\\honor\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\honor\\AppData\\Roaming\\npm;C:\\Users\\honor\\AppData\\Local\\ComposerSetup\\bin;C:\\Users\\honor\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\Neovim\\bin;C:\\Program Files\\Neovim\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '1801'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Users\\honor\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-O9KNLD9'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-O9KNLD9'
+    'USERNAME' => 'honor'
+    'USERPROFILE' => 'C:\\Users\\honor'
+    'windir' => 'C:\\Windows'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.86.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-49a549f78e-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1707761337.7465
+    'REQUEST_TIME' => 1707761337
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2024-02-12 19:09:06 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('pgsql:host=loca...', 'db_user', 'db_pwd', NULL)
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => 08006
+    [1] => 7
+    [2] => FATAL:  la autentificación password falló para el usuario «db_user»
+)
+
+2024-02-12 19:09:05 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\honor\\AppData\\Roaming'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_3332_JCLXCVGZZLKJWLCN'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-O9KNLD9'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DataGrip' => 'C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\honor'
+    'LOCALAPPDATA' => 'C:\\Users\\honor\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-O9KNLD9'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\honor\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\Program Files\\PostgreSQL\\psqlODBC\\etc\\openssl.cnf'
+    'ORIGINAL_XDG_CURRENT_DESKTOP' => 'undefined'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\PuTTY\\;C:\\Users\\honor\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\honor\\AppData\\Roaming\\npm;C:\\Users\\honor\\AppData\\Local\\ComposerSetup\\bin;C:\\Users\\honor\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\Neovim\\bin;C:\\Program Files\\Neovim\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '1801'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Users\\honor\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-O9KNLD9'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-O9KNLD9'
+    'USERNAME' => 'honor'
+    'USERPROFILE' => 'C:\\Users\\honor'
+    'windir' => 'C:\\Windows'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.86.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-49a549f78e-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1707761344.9921
+    'REQUEST_TIME' => 1707761344
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2024-02-12 19:25:14 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('pgsql:host=loca...', 'db_user', 'db_pwd', NULL)
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => 08006
+    [1] => 7
+    [2] => FATAL:  la autentificación password falló para el usuario «db_user»
+)
+
+2024-02-12 19:25:13 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\honor\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-O9KNLD9'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DataGrip' => 'C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\honor'
+    'LOCALAPPDATA' => 'C:\\Users\\honor\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-O9KNLD9'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\honor\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\Program Files\\PostgreSQL\\psqlODBC\\etc\\openssl.cnf'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\PuTTY\\;C:\\Users\\honor\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\honor\\AppData\\Roaming\\npm;C:\\Users\\honor\\AppData\\Local\\ComposerSetup\\bin;C:\\Users\\honor\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\Neovim\\bin;C:\\Program Files\\Neovim\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '1801'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-O9KNLD9'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-O9KNLD9'
+    'USERNAME' => 'honor'
+    'USERPROFILE' => 'C:\\Users\\honor'
+    'windir' => 'C:\\Windows'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1707762313.0673
+    'REQUEST_TIME' => 1707762313
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2024-02-12 19:26:34 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('pgsql:host=loca...', 'db_user', 'db_pwd', NULL)
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => 08006
+    [1] => 7
+    [2] => FATAL:  la autentificación password falló para el usuario «db_user»
+)
+
+2024-02-12 19:26:33 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\honor\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-O9KNLD9'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DataGrip' => 'C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\honor'
+    'LOCALAPPDATA' => 'C:\\Users\\honor\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-O9KNLD9'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\honor\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\Program Files\\PostgreSQL\\psqlODBC\\etc\\openssl.cnf'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\PuTTY\\;C:\\Users\\honor\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\honor\\AppData\\Roaming\\npm;C:\\Users\\honor\\AppData\\Local\\ComposerSetup\\bin;C:\\Users\\honor\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\Neovim\\bin;C:\\Program Files\\Neovim\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '1801'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-O9KNLD9'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-O9KNLD9'
+    'USERNAME' => 'honor'
+    'USERPROFILE' => 'C:\\Users\\honor'
+    'windir' => 'C:\\Windows'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1707762393.0516
+    'REQUEST_TIME' => 1707762393
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2024-02-12 19:27:06 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user_test» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('pgsql:host=loca...', 'db_user_test', 'db_pwd_test', NULL)
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user_test» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => 08006
+    [1] => 7
+    [2] => FATAL:  la autentificación password falló para el usuario «db_user_test»
+)
+
+2024-02-12 19:27:05 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\honor\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-O9KNLD9'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DataGrip' => 'C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\honor'
+    'LOCALAPPDATA' => 'C:\\Users\\honor\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-O9KNLD9'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\honor\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\Program Files\\PostgreSQL\\psqlODBC\\etc\\openssl.cnf'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\PuTTY\\;C:\\Users\\honor\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\honor\\AppData\\Roaming\\npm;C:\\Users\\honor\\AppData\\Local\\ComposerSetup\\bin;C:\\Users\\honor\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\Neovim\\bin;C:\\Program Files\\Neovim\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '1801'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-O9KNLD9'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-O9KNLD9'
+    'USERNAME' => 'honor'
+    'USERPROFILE' => 'C:\\Users\\honor'
+    'windir' => 'C:\\Windows'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1707762425.4401
+    'REQUEST_TIME' => 1707762425
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2024-02-12 19:27:28 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user_test» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('pgsql:host=loca...', 'db_user_test', 'db_pwd_test', NULL)
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#19 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#20 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[08006] [7] FATAL:  la autentificación password falló para el usuario «db_user_test» in C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(461): yii\db\Connection->getSlavePdo(true)
+#3 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Connection.php(946): yii\db\Schema->quoteValue('migration')
+#4 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(465): yii\db\Connection->quoteValue('migration')
+#5 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\pgsql\Schema.php(193): yii\db\pgsql\Schema->findColumns(Object(yii\db\TableSchema))
+#6 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\pgsql\Schema->loadTableSchema('migration')
+#7 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#8 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#14 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#15 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#16 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#17 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#18 C:\proyectos\sismov\sisemov_api\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\proyectos\sismov\sisemov_api\yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => 08006
+    [1] => 7
+    [2] => FATAL:  la autentificación password falló para el usuario «db_user_test»
+)
+
+2024-02-12 19:27:27 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\honor\\AppData\\Roaming'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_3332_JCLXCVGZZLKJWLCN'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-O9KNLD9'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DataGrip' => 'C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\honor'
+    'LOCALAPPDATA' => 'C:\\Users\\honor\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-O9KNLD9'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\honor\\OneDrive'
+    'OPENSSL_CONF' => 'C:\\Program Files\\PostgreSQL\\psqlODBC\\etc\\openssl.cnf'
+    'ORIGINAL_XDG_CURRENT_DESKTOP' => 'undefined'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\PuTTY\\;C:\\Users\\honor\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\honor\\AppData\\Roaming\\npm;C:\\Users\\honor\\AppData\\Local\\ComposerSetup\\bin;C:\\Users\\honor\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files\\JetBrains\\DataGrip 2020.3.2\\bin;;C:\\Program Files\\PostgreSQL\\16\\bin;C:\\Program Files\\Neovim\\bin;C:\\Program Files\\Neovim\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '1801'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Users\\honor\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\honor\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-O9KNLD9'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-O9KNLD9'
+    'USERNAME' => 'honor'
+    'USERPROFILE' => 'C:\\Users\\honor'
+    'windir' => 'C:\\Windows'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.86.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\honor\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-49a549f78e-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1707762447.1314
+    'REQUEST_TIME' => 1707762447
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]

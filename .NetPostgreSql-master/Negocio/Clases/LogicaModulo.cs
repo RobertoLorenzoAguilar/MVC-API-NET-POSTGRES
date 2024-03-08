@@ -37,6 +37,39 @@ namespace Negocio.Clases
             }
         }
 
+        public bool GuardarModulo(Modulo objModulo)
+        {
+            try
+            {
+                objModulo.Eliminado = 1;
+                db.Modulos.Add(objModulo);
+
+                db.SaveChanges();
+                return true; // Si se guarda correctamente, devolvemos true
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción según sea necesario
+                Console.WriteLine($"Error al guardar el modulo: {ex.Message}");
+                return false; // Si ocurre un error, devolvemos false
+            }
+        }
+        public bool ActualizarModulo(Modulo objModulo)
+        {
+            try
+            {
+                var objModuloActualizar = db.Modulos.Where(x => x.Id == objModulo.Id).First();
+                objModuloActualizar.Nombre = objModulo.Nombre;                
+                db.SaveChanges();
+                return true; // Si se guarda correctamente, devolvemos true
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción según sea necesario
+                Console.WriteLine($"Error al actualizar el modulo: {ex.Message}");
+                return false; // Si ocurre un error, devolvemos false
+            }
+        }
 
     }
 }
