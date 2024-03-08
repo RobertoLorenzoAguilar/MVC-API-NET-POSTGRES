@@ -25,8 +25,8 @@ namespace WebContratos.Controllers
         
         [HttpPost]
         [Route("Rols/AgregarRol")]
-        [Authorize("agregar:Rols")]
-        public IActionResult AgregarRol([FromBody] Rol Rol)
+        [Authorize("agregar:roles")]
+        public IActionResult AgregarRol([FromBody] RolPermisoModulo Rol)
         {
             //var Modulos = _Rol.GetModulos();
             var resultado = _Rol.GuardarRol(Rol);

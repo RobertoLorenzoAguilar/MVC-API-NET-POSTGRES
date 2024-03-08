@@ -163,7 +163,7 @@ const Permisos = () => {
 
       body.claveOld = modelValue?.id;
 
-      const res = await HttpService.post(endPoint, body);
+      const res = await HttpService.post('Rols/AgregarRol', body);
       respuestas(res);
       if (res.status === 200) {
         setOpen(false);
@@ -187,22 +187,24 @@ const Permisos = () => {
     });
   };
 
-
+  //para asignar leer modulos al Select
   const modelParams = {
     modulos: {
       name: 'modulos'
     },
   };
 
+  //para asignar leer permisos al Select
   const modelParamsPermiso = {
     permisos: {
-      name: 'permisos/leer'
+      name: 'permisos'
     },
   };
 
-  const modelParamsRoles= {
+  //para asignar leer roles al Select
+  const modelParamsRoles = {
     roles: {
-      name: 'rol/leer'
+      name: 'rol'
     },
   };
 
@@ -257,7 +259,7 @@ const Permisos = () => {
               >
 
 
-                <Form.Item name="id" label="Rol">
+                <Form.Item name="rolid" label="Rol">
                   <Select
                     placeholder="Seleccione un rol"
                     allowClear={true}
@@ -268,7 +270,7 @@ const Permisos = () => {
                   />
 
                 </Form.Item>
-                <Form.Item name="id" label="Permiso">
+                <Form.Item name="permisoid" label="Permiso">
                   <Select
                     placeholder="Seleccione un permiso"
                     allowClear={true}
@@ -286,7 +288,7 @@ const Permisos = () => {
                 md={{ span: 12 }}
                 lg={{ span: 12 }}
               >
-                <Form.Item name="idModulo" label="Módulo">
+                <Form.Item name="moduloid" label="Módulo">
                   <Select
                     placeholder="Seleccione un módulo"
                     allowClear={true}

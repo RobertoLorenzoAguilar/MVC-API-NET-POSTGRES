@@ -6,7 +6,7 @@ namespace Negocios.Interfaces
     {
         Rol GetRolById(int? IdRol);
         List<Rol> GetRols();
-        bool GuardarRol(Rol objRol);
+        bool GuardarRol(RolPermisoModulo objRol);
 
     }
 }

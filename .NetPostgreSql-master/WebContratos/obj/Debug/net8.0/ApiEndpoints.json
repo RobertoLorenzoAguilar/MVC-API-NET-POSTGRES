@@ -80,6 +80,16 @@
   },
   {
     "ContainingType": "WebContratos.Controllers.PermisoController",
+    "Method": "GetPermisos",
+    "RelativePath": "permisos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebContratos.Controllers.PermisoController",
     "Method": "GetPermisosByRol",
     "RelativePath": "permisos/rol",
     "HttpMethod": "GET",
@@ -108,7 +118,7 @@
     "Parameters": [
       {
         "Name": "Rol",
-        "Type": "Datos.Models.Rol",
+        "Type": "Datos.Models.RolPermisoModulo",
         "IsRequired": true
       }
     ],

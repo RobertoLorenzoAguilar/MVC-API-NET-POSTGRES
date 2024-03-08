@@ -73,6 +73,10 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("eliminar:usuarios", policy => policy.RequireClaim("scope", "eliminar:usuarios"));
     options.AddPolicy("actualizar:usuarios", policy => policy.RequireClaim("scope", "actualizar:usuarios"));
     #endregion Modulo usuarios
+
+    #region Modulo roles    
+    options.AddPolicy("agregar:roles", policy => policy.RequireClaim("scope", "agregar:roles"));    
+    #endregion Modulo roles
 });
 // final JWT
 

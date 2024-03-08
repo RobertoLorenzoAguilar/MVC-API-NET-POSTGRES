@@ -22,11 +22,11 @@ namespace Negocio.Clases
             var lstRol = db.Rols.ToList();
             return lstRol;
         }
-        public bool GuardarRol(Rol objRol)
+        public bool GuardarRol(RolPermisoModulo objRol)
         {
             try
             {   
-                db.Rols.Add(objRol);
+                db.RolPermisoModulos.Add(objRol);
                 db.SaveChanges();
                 return true; // Si se guarda correctamente, devolvemos true
             }
