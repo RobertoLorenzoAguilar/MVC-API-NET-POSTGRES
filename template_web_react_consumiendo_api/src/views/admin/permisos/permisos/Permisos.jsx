@@ -60,36 +60,6 @@ const Permisos = () => {
   ];
 
   const columns = [
-    // {
-    //   title: "Acciones",
-    //   key: "nombre",
-    //   dataIndex: "nombre",
-    //   width: 100,
-    //   align: "center",
-    //   render: (_, item) => (
-    //     <ActionsButton
-    //       options={[
-    //         {
-    //           name: "Editar",
-    //           onClick: () => {
-    //             setOpen(true);
-    //             setModelValue(item);
-    //             form.setFieldsValue({ ...item });
-    //           },
-    //         },
-    //         {
-    //           name: "Eliminar",
-    //           onClick: () => {
-    //             eliminarRegistro(item?.nombre, item?.id, endPoint, () => {
-    //               tablaRef?.current?.refresh();
-    //             });
-    //           },
-    //           danger: true,
-    //         },
-    //       ]}
-    //     />
-    //   ),
-    // },
     {
       title: "Clave",
       key: "id",
@@ -217,6 +187,25 @@ const Permisos = () => {
     });
   };
 
+
+  const modelParams = {
+    modulos: {
+      name: 'modulos'
+    },
+  };
+
+  const modelParamsPermiso = {
+    permisos: {
+      name: 'permisos/leer'
+    },
+  };
+
+  const modelParamsRoles= {
+    roles: {
+      name: 'rol/leer'
+    },
+  };
+
   return (
     <SimpleTableLayout
       customRender={
@@ -266,8 +255,29 @@ const Permisos = () => {
                 md={{ span: 12 }}
                 lg={{ span: 12 }}
               >
-                <Form.Item name="nombre" label="Nombre">
-                  <Input autoComplete="off" />
+
+
+                <Form.Item name="id" label="Rol">
+                  <Select
+                    placeholder="Seleccione un rol"
+                    allowClear={true}
+                    modelsParams={modelParamsRoles.roles}
+                    labelProp="nombre"
+                    valueProp="id"
+                    render={(_, row) => `${row.id} - ${row.nombre}`}
+                  />
+
+                </Form.Item>
+                <Form.Item name="id" label="Permiso">
+                  <Select
+                    placeholder="Seleccione un permiso"
+                    allowClear={true}
+                    modelsParams={modelParamsPermiso.permisos}
+                    labelProp="nombre"
+                    valueProp="id"
+                    render={(_, row) => `${row.id} - ${row.nombre}`}
+                  />
+
                 </Form.Item>
               </Col>
               <Col
@@ -278,22 +288,18 @@ const Permisos = () => {
               >
                 <Form.Item name="idModulo" label="Módulo">
                   <Select
-                    placeholder="Selecciona un ejercicio fiscal"
-                    allowClear
-                    modelsParams={{
-                      name: "modulo",
-                      limite: -1,
-                      ordenar: "nombre",
-                    }}
+                    placeholder="Seleccione un módulo"
+                    allowClear={true}
+                    modelsParams={modelParams.modulos}
                     labelProp="nombre"
                     valueProp="id"
                     render={(_, row) => `${row.id} - ${row.nombre}`}
-                    append={[modelValue?.modulo]}
                   />
+
                 </Form.Item>
               </Col>
             </Row>
-            <Row gutter={10}>
+            {/* <Row gutter={10}>
               <Col span={24}>
                 <Form.Item
                   name="id"
@@ -308,7 +314,7 @@ const Permisos = () => {
                   <Input rows={2} />
                 </Form.Item>
               </Col>
-            </Row>
+            </Row> */}
             <Row gutter={10}>
               <Col span={24}>
                 <Form.Item name="descripcion" label="Descripción">
@@ -348,7 +354,7 @@ const Permisos = () => {
           </Form>
         </Modal>
       </>
-    </SimpleTableLayout>
+    </SimpleTableLayout >
   );
 };
 
